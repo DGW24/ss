@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🌸 শিশু শিক্ষা কেন্দ্র 🌸</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600&family=Baloo+Da+2:wght@600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;scroll-behavior:smooth;}
+body{
+  font-family:'Hind Siliguri',sans-serif;
+  margin:0;
+  display:flex;
+  background:linear-gradient(to top,#b3ffb3 0%,#ccf2ff 60%,#ffffff 100%);
+  overflow-x:hidden;
+  position:relative;
+}
+/* 🌞 Sun */
+.sun{position:fixed;top:40px;right:80px;font-size:60px;animation:rotateSun 30s linear infinite;z-index:0;}
+@keyframes rotateSun{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+
+/* ☁️ Clouds */
+.cloud{position:fixed;font-size:50px;top:100px;left:-200px;opacity:0.7;animation:moveCloud 60s linear infinite;}
+.cloud:nth-child(1){animation-delay:0s;}
+.cloud:nth-child(2){top:150px;animation-delay:20s;}
+.cloud:nth-child(3){top:200px;animation-delay:40s;}
+@keyframes moveCloud{from{left:-200px;}to{left:110%;}}
+
+/* 🐦 Birds */
+.bird{position:fixed;font-size:30px;animation:flyBird 20s linear infinite;}
+.bird:nth-child(4){top:180px;left:-80px;animation-delay:0s;}
+.bird:nth-child(5){top:220px;left:-200px;animation-delay:10s;}
+@keyframes flyBird{0%{left:-100px;}50%{top:220px;}100%{left:110%;}}
+
+/* 🌳 Trees & Flowers */
+.ground{position:fixed;bottom:0;left:0;width:100%;height:200px;z-index:0;overflow:hidden;}
+.tree{position:absolute;bottom:40px;font-size:50px;animation:swayTree 4s ease-in-out infinite alternate;}
+.tree:nth-child(1){right:50px;}
+.tree:nth-child(2){right:150px;}
+.tree:nth-child(3){right:300px;}
+.tree:nth-child(4){right:450px;}
+@keyframes swayTree{from{transform:rotate(-2deg);}to{transform:rotate(2deg);}}
+.flower{position:absolute;bottom:20px;font-size:30px;animation:bloom 3s ease-in-out infinite alternate;}
+.flower:nth-child(5){left:100px;}
+.flower:nth-child(6){left:180px;}
+.flower:nth-child(7){left:260px;}
+@keyframes bloom{from{transform:scale(0.8);}to{transform:scale(1.2);}}
+
+/* 🐄 Cow */
+.cow{position:absolute;bottom:50px;left:-100px;font-size:50px;animation:cowMove 40s linear infinite;}
+@keyframes cowMove{0%{left:-150px;}50%{left:60%;}100%{left:-150px;}}
+
+/* Header & Nav */
+header{position:fixed;top:0;left:0;width:100%;background:linear-gradient(90deg,#ffa751,#ffe259);padding:10px 0;text-align:center;color:white;font-family:'Baloo Da 2',cursive;font-size:30px;text-shadow:1px 2px 3px rgba(0,0,0,0.2);z-index:1000;}
+nav.top{position:fixed;top:64px;left:0;width:100%;background:#fff8d8b8;display:flex;justify-content:center;gap:25px;padding:10px 0;z-index:999;}
+nav.top a{color:#333;text-decoration:none;font-weight:600;font-size:18px;transition:0.3s;}
+nav.top a:hover{color:#e67e22;}
+
+/* Sidebar */
+aside{position:fixed;top:120px;left:0;width:250px;background:transparent;height:calc(100% - 120px);overflow-y:auto;padding:10px 14px;z-index:900;}
+aside a{display:block;color:#444;background:#fffbe6;padding:10px 14px;margin:8px 0;text-decoration:none;border-radius:10px;font-weight:500;transition:0.3s;}
+aside a:hover{background:linear-gradient(90deg,#fff099,#ffe066);color:#d35400;transform:translateX(5px);}
+
+/* Main */
+main{margin-top:120px;margin-left:270px;padding:20px;width:calc(100% - 270px);min-height:100vh;z-index:1;}
+section{padding:15px;background:rgba(255,255,255,0.3);border-radius:14px;box-shadow:0 3px 8px rgba(0,0,0,0.1);margin-bottom:15px;}
+section h2{font-family:'Baloo Da 2',cursive;color:#e67e22;border-bottom:3px solid #ffcc33;display:inline-block;padding-bottom:5px;margin-bottom:10px;}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* সবসময় 2 কলাম */
+  gap: 12px;
+}
+.card {
+  background:#fffbe6;
+  border-radius:10px;
+  text-align:center;
+  padding:12px;
+  font-size:28px;
+  font-family:'Baloo Da 2',cursive;
+  color:#e67e22;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+  transition:0.3s;
+  height: 250px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* মাঝখানে লাইন */
+  align-items: center;     /* horizontally centered */
+  line-height: 0px;
+}
+.card:hover{transform:scale(1.08);background:#ffef99;}
+.toggleBtn{padding:10px 16px;margin:5px;font-size:17px;border:none;border-radius:8px;cursor:pointer;background:#ffdd99;transition:0.3s;}
+.toggleBtn.active{background:#ffcc33;color:#fff;}
+footer{text-align:center;padding:15px;font-size:14px;color:#555;margin-top:20px;}
+.okkhoro {
+  font-size: 140px;
+  line-height: 120px; /* কমিয়ে দিলাম */
+  margin-bottom: 5px; /* নিচের লেখার জন্য স্পেস */
+}
+/* 🔊 Sound Button */
+#soundBtn{position:fixed;bottom:20px;right:20px;background:#fff3b0;border:2px solid #ffcc33;border-radius:8px;padding:8px 16px;font-size:16px;cursor:pointer;z-index:1100;}
+</style>
+</head>
+<body>
+
+<!-- Animations -->
+<div class="sun">🌞</div>
+<div class="cloud">☁️</div><div class="cloud">☁️</div><div class="cloud">☁️</div>
+<div class="bird">🐦</div><div class="bird">🐦</div>
+<div class="ground">
+  <div class="tree">🌳</div><div class="tree">🌳</div><div class="tree">🌳</div><div class="tree">🌳</div>
+  <div class="cow">🐄</div>
+  <div class="flower">🌼</div><div class="flower">🌼</div><div class="flower">🌼</div>
+</div>
+
+<header>🌸 শিশু শিক্ষা কেন্দ্র 🌸</header>
+
+<nav class="top">
+<a href="index.html">🏠 হোম</a>
+<a href="about.html">আমাদের সম্পর্কে</a>
+<a href="contact.html">যোগাযোগ</a>
+</nav>
+
+<aside>
+<a href="borno.html">বর্ণপরিচয়</a>
+<a href="#">সংখ্যা শেখা</a>
+<a href="#">ইংরেজি বর্ণমালা</a>
+<a href="#">ইংরেজি সংখ্যা</a>
+<a href="#">বাংলা ছড়া</a>
+<a href="#">ইংরেজি ছড়া</a>
+<a href="#">ফুলের পরিচয়</a>
+<a href="#">ফলের পরিচয়</a>
+<a href="#">পশুর পরিচয়</a>
+<a href="#">পাখির পরিচয়</a>
+<a href="#">ব্যবহারিক জিনিস</a>
+<a href="#">কুইজ / নিজে উত্তর দাও</a>
+</aside>
+
+<main>
+<section>
+  <h2>🌼 বাংলা বর্ণ পরিচয়</h2>
+  <p>ছোট্ট বন্ধুদের শিক্ষার আসর — অক্ষরে অক্ষরে শেখা!</p>
+  <div style="text-align:center;margin:10px 0;">
+    <button class="toggleBtn active" onclick="showSection('swar')">স্বরবর্ণ</button>
+    <button class="toggleBtn" onclick="showSection('benjon')">ব্যঞ্জনবর্ণ</button>
+  </div>
+</section>
+
+<!-- 🌸 স্বরবর্ণ -->
+<section id="swar">
+  <div class="grid">
+    <div class="card" onclick="speak('অ')"><div class="okkhoro">অ</div><p>🐍 অজগর আসছে তেড়ে।</p></div>
+    <div class="card" onclick="speak('আ')"><div class="okkhoro">আ</div><p>🍎 আমটি আমি খাবো পেরে।</p></div>
+    <div class="card" onclick="speak('ই')"><div class="okkhoro">ই</div><p>🐜 ইঁদুর দৌড়ায় ঘরে।</p></div>
+    <div class="card" onclick="speak('ঈ')"><div class="okkhoro">ঈ</div><p>🦌 ঈগল উড়ে আকাশে।</p></div>
+    <div class="card" onclick="speak('উ')"><div class="okkhoro">উ</div><p>🐄 উট জল খায় মরুভূমিতে।</p></div>
+    <div class="card" onclick="speak('ঊ')"><div class="okkhoro">ঊ</div><p>🐃 ঊষা আসে ভোরে।</p></div>
+    <div class="card" onclick="speak('ঋ')"><div class="okkhoro">ঋ</div><p>🌧️ ঋতু আসে ছয়টি দেশে।</p></div>
+    <div class="card" onclick="speak('এ')"><div class="okkhoro">এ</div><p>🐘 এক হাতি চলে ধীরে।</p></div>
+    <div class="card" onclick="speak('ঐ')"><div class="okkhoro">ঐ</div><p>👁️ ঐ দেখ পাখি উড়ে যায়।</p></div>
+    <div class="card" onclick="speak('ও')"><div class="okkhoro">ও</div><p>🐵 ওল বন্ধুটি লাফায় গাছে।</p></div>
+    <div class="card" onclick="speak('ঔ')"><div class="okkhoro">ঔ</div><p>🍇 ঔষধ আসে গাছ থেকে।</p></div>
+  </div>
+</section>
+
+<!-- 🌸 ব্যঞ্জনবর্ণ -->
+<section id="benjon" style="display:none;">
+  <div class="grid">
+    <div class="card" onclick="speak('ক')"><div class="okkhoro">ক</div><p>🐶 কুকুর খেলছে।</p></div>
+    <div class="card" onclick="speak('খ')"><div class="okkhoro">খ</div><p>🐇 খরগোশ দৌড়াচ্ছে।</p></div>
+    <div class="card" onclick="speak('গ')"><div class="okkhoro">গ</div><p>🐒 গরিলা লাফায় গাছে।</p></div>
+    <div class="card" onclick="speak('ঘ')"><div class="okkhoro">ঘ</div><p>🐄 ঘোড়া দৌড়ায় মাঠে।</p></div>
+    <div class="card" onclick="speak('ঙ')"><div class="okkhoro">ঙ</div><p>🦆 হাঁসের ডাকে ঙা ঙা।</p></div>
+    <div class="card" onclick="speak('চ')"><div class="okkhoro">চ</div><p>🌶️ চিলি লাল মরিচ ঝাল।</p></div>
+    <div class="card" onclick="speak('ছ')"><div class="okkhoro">ছ</div><p>🌸 ছাতা খুলে বৃষ্টি ভেজা।</p></div>
+    <div class="card" onclick="speak('জ')"><div class="okkhoro">জ</div><p>🦓 জেব্রা চলে জঙ্গলে।</p></div>
+    <div class="card" onclick="speak('ঝ')"><div class="okkhoro">ঝ</div><p>💧 ঝর্ণা পড়ে ঝরঝর।</p></div>
+    <div class="card" onclick="speak('ঞ')"><div class="okkhoro">ঞ</div><p>🍞 পাঁউরুটিতে ঞ শব্দ শোনা যায়।</p></div>
+    <div class="card" onclick="speak('ট')"><div class="okkhoro">ট</div><p>🍅 টমেটো লাল লাল।</p></div>
+    <div class="card" onclick="speak('ঠ')"><div class="okkhoro">ঠ</div><p>🥁 ঠুম ঠুম বাজে ঢাক।</p></div>
+    <div class="card" onclick="speak('ড')"><div class="okkhoro">ড</div><p>🦆 ডাহুক হাঁটে পুকুরপারে।</p></div>
+    <div class="card" onclick="speak('ঢ')"><div class="okkhoro">ঢ</div><p>🥁 ঢোল বাজে আনন্দে।</p></div>
+    <div class="card" onclick="speak('ণ')"><div class="okkhoro">ণ</div><p>🌾 ধান ক্ষেতে সোনালি রঙ।</p></div>
+    <div class="card" onclick="speak('ত')"><div class="okkhoro">ত</div><p>🍊 তরমুজ খেতে মিষ্টি।</p></div>
+    <div class="card" onclick="speak('থ')"><div class="okkhoro">থ</div><p>🌿 থোকা থোকা ফুল ফোটে।</p></div>
+    <div class="card" onclick="speak('দ')"><div class="okkhoro">দ</div><p>🐬 দ Dolphin সাঁতরে চলে।</p></div>
+    <div class="card" onclick="speak('ধ')"><div class="okkhoro">ধ</div><p>🌱 ধান গাছ সবুজ রঙে।</p></div>
+    <div class="card" onclick="speak('ন')"><div class="okkhoro">ন</div><p>🐦 নাইটিঙ্গেল গান গায়।</p></div>
+    <div class="card" onclick="speak('প')"><div class="okkhoro">প</div><p>🍞 পাউরুটি খেতে মজা।</p></div>
+    <div class="card" onclick="speak('ফ')"><div class="okkhoro">ফ</div><p>🌸 ফুল ফোটে সকালে।</p></div>
+    <div class="card" onclick="speak('ব')"><div class="okkhoro">ব</div><p>🐝 মৌমাছি ব্যস্ত বাগানে।</p></div>
+    <div class="card" onclick="speak('ভ')"><div class="okkhoro">ভ</div><p>💨 বাতাস বইছে নরমে।</p></div>
+    <div class="card" onclick="speak('ম')"><div class="okkhoro">ম</div><p>🐒 বানর মজা করছে।</p></div>
+    <div class="card" onclick="speak('য')"><div class="okkhoro">য</div><p>🦋 যুঁই ফুলের গন্ধ।</p></div>
+    <div class="card" onclick="speak('র')"><div class="okkhoro">র</div><p>🌈 রংধনু আকাশে।</p></div>
+    <div class="card" onclick="speak('ল')"><div class="okkhoro">ল</div><p>🍋 লেবু টক টক।</p></div>
+    <div class="card" onclick="speak('শ')"><div class="okkhoro">শ</div><p>🐍 সাপ ফোঁস করে।</p></div>
+    <div class="card" onclick="speak('ষ')"><div class="okkhoro">ষ</div><p>🐚 শঙ্খ বাজে সাগরে।</p></div>
+    <div class="card" onclick="speak('স')"><div class="okkhoro">স</div><p>☀️ সূর্য আলো দেয়।</p></div>
+    <div class="card" onclick="speak('হ')"><div class="okkhoro">হ</div><p>🐹 হামস্টার ঘুমায়।</p></div>
+    <div class="card" onclick="speak('ড়')"><div class="okkhoro">ড়</div><p>🌳 বড় গাছের ছায়া।</p></div>
+    <div class="card" onclick="speak('ঢ়')"><div class="okkhoro">ঢ়</div><p>🍂 ঋতু বদলায় বছরে।</p></div>
+    <div class="card" onclick="speak('য়')"><div class="okkhoro">য়</div><p>👶 ছোট ছেলেটি হাসছে।</p></div>
+  </div>
+</section>
+
+<footer>© ২০২৫ শিশু শিক্ষা কেন্দ্র | Designed with ❤️ for kids</footer>
+
+<!-- Sound Button -->
+<button id="soundBtn">🔊 সাউন্ড</button>
+<audio id="natureAudio" loop>
+  <source src="https://www.soundhelix.com/examples/mp3/SoundHelix-Song-1.mp3" type="audio/mp3">
+</audio>
+
+<script>
+const audio=document.getElementById('natureAudio');
+const btn=document.getElementById('soundBtn');
+let playing=false;
+btn.addEventListener('click',()=>{
+  if(!playing){audio.play();btn.textContent='🔇 বন্ধ';playing=true;}
+  else{audio.pause();btn.textContent='🔊 সাউন্ড';playing=false;}
+});
+function showSection(sec){
+  document.getElementById('swar').style.display=sec==='swar'?'block':'none';
+  document.getElementById('benjon').style.display=sec==='benjon'?'block':'none';
+  document.querySelectorAll('.toggleBtn').forEach(b=>b.classList.remove('active'));
+  if(sec==='swar')document.querySelectorAll('.toggleBtn')[0].classList.add('active');
+  else document.querySelectorAll('.toggleBtn')[1].classList.add('active');
+}
+function speak(text){
+  const utter = new SpeechSynthesisUtterance(text);
+  utter.lang = "bn-BD";       // বাংলা উচ্চারণ
+  utter.rate = 0.9;           // গতি একটু ধীর
+  utter.pitch = 1;            // স্বর স্বাভাবিক
+  speechSynthesis.cancel();   // আগেরটি বন্ধ করো
+  speechSynthesis.speak(utter);
+}
+</script>
+</body>
+</html>
