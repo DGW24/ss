@@ -75,6 +75,83 @@ footer { text-align:center; padding:20px; font-size:14px; color:#555; margin-top
 
 /* 🔊 Sound Button */
 #soundBtn{position:fixed;bottom:20px;right:20px;background:#fff3b0;border:2px solid #ffcc33;border-radius:8px;padding:8px 16px;font-size:16px;cursor:pointer;z-index:1100;}
+/* 📱 Mobile Responsive Design */
+@media (max-width: 768px) {
+
+  body {
+    flex-direction: column;
+  }
+
+  header {
+    font-size: 22px;
+    padding: 12px 0;
+  }
+
+  nav.top {
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  aside {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #fffbe6;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin-top: 80px;
+  }
+
+  aside a {
+    margin: 5px;
+    flex: 1 1 40%;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  main {
+    margin: 10px;
+    margin-top: 20px;
+    margin-left: 0;
+    padding: 15px;
+    width: auto;
+  }
+
+  section {
+    padding: 20px;
+  }
+
+  .grid {
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 10px;
+  }
+
+  .card {
+    font-size: 26px;
+    padding: 10px;
+  }
+
+  #soundBtn {
+    font-size: 14px;
+    padding: 6px 12px;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  /* 🌳 ছোট স্ক্রিনে ব্যাকগ্রাউন্ড এলিমেন্ট গুলো হালকা রাখো */
+  .tree, .flower, .cow, .cloud, .sun, .bird {
+    opacity: 0.5;
+    font-size: smaller;
+  }
+}
+
 </style>
 </head>
 <body>

@@ -99,6 +99,84 @@ footer{text-align:center;padding:15px;font-size:14px;color:#555;margin-top:20px;
 }
 /* 🔊 Sound Button */
 #soundBtn{position:fixed;bottom:20px;right:20px;background:#fff3b0;border:2px solid #ffcc33;border-radius:8px;padding:8px 16px;font-size:16px;cursor:pointer;z-index:1100;}
+/* 📱 Mobile Responsive Design */
+@media (max-width: 768px) {
+
+  body {
+    flex-direction: column;
+  }
+
+  header {
+    font-size: 22px;
+    padding: 12px 0;
+  }
+
+  nav.top {
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  aside {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #fffbe6;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin-top: 80px;
+  }
+
+  aside a {
+    margin: 5px;
+    flex: 1 1 40%;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  main {
+    margin: 10px;
+    margin-top: 20px;
+    margin-left: 0;
+    padding: 15px;
+    width: auto;
+  }
+
+  section {
+    padding: 20px;
+  }
+
+  .grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* সবসময় 2 কলাম */
+  gap: 12px;
+}
+
+  .card {
+    font-size: 26px;
+    padding: 10px;
+  }
+
+  #soundBtn {
+    font-size: 14px;
+    padding: 6px 12px;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  /* 🌳 ছোট স্ক্রিনে ব্যাকগ্রাউন্ড এলিমেন্ট গুলো হালকা রাখো */
+  .tree, .flower, .cow, .cloud, .sun, .bird {
+    opacity: 0.5;
+    font-size: smaller;
+  }
+}
+
 </style>
 </head>
 <body>
@@ -227,14 +305,35 @@ function showSection(sec){
   if(sec==='swar')document.querySelectorAll('.toggleBtn')[0].classList.add('active');
   else document.querySelectorAll('.toggleBtn')[1].classList.add('active');
 }
-function speak(text){
-  const utter = new SpeechSynthesisUtterance(text);
-  utter.lang = "bn-BD";       // বাংলা উচ্চারণ
-  utter.rate = 0.9;           // গতি একটু ধীর
-  utter.pitch = 1;            // স্বর স্বাভাবিক
-  speechSynthesis.cancel();   // আগেরটি বন্ধ করো
-  speechSynthesis.speak(utter);
-}
+document.querySelectorAll('.card').forEach(card=>{
+  card.addEventListener('click', ()=>{
+    let rawText = card.textContent.trim();
+    let text = rawText.replace(/[\u{1F300}-\u{1FAFF}]/gu, '').trim();
+    if(!text) return;
+
+    let utter = new SpeechSynthesisUtterance(text);
+
+    // 🔊 বাংলা চেনা + fallback ইংরেজি
+    if(/[অআইঈউঊঋএঐওঔক-হ০-৯]/.test(text)) {
+      utter.lang = 'bn-IN'; // 🇮🇳 কিছু ব্রাউজারে এটা কাজ করে
+    } else {
+      utter.lang = 'en-US';
+    }
+
+    // যদি বাংলা ভয়েস না থাকে, ইংরেজি ভয়েসে fallback
+    utter.onstart = ()=>{};
+    utter.onerror = ()=>{
+      utter.lang = 'en-US';
+      speechSynthesis.speak(utter);
+    };
+
+    utter.rate = 0.9;
+    utter.pitch = 1.1;
+    speechSynthesis.cancel();
+    speechSynthesis.speak(utter);
+  });
+});
+
 </script>
 </body>
 </html>
