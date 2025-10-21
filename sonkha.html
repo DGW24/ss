@@ -218,73 +218,20 @@ footer{text-align:center;padding:15px;font-size:14px;color:#555;margin-top:20px;
 
 <main>
 <section>
-  <h2>🌼 বাংলা বর্ণ পরিচয়</h2>
-  <p>ছোট্ট বন্ধুদের শিক্ষার আসর — অক্ষরে অক্ষরে শেখা!</p>
-  <div style="text-align:center;margin:10px 0;">
-    <button class="toggleBtn active" onclick="showSection('swar')">স্বরবর্ণ</button>
-    <button class="toggleBtn" onclick="showSection('benjon')">ব্যঞ্জনবর্ণ</button>
-  </div>
-</section>
-
-<!-- 🌸 স্বরবর্ণ -->
-<section id="swar">
+  <h2>🌼 সংখ্যা শেখা</h2>
+  <p>ছোট্ট বন্ধুদের শিক্ষার আসর — সংখ্যা শেখা!</p>
+  
   <div class="grid">
-    <div class="card" onclick="speak('অ')"><div class="okkhoro">অ</div><p>🐍 তে - অজগরটি আসছে তেড়ে।</p></div>
-    <div class="card" onclick="speak('আ')"><div class="okkhoro">আ</div><p>🥭 তে - আমটি আমি খাবো পেরে।</p></div>
-    <div class="card" onclick="speak('ই')"><div class="okkhoro">ই</div><p>🐀 তে - ইঁদুর ভয়ে দৌড়ে পালায়।</p></div>
-    <div class="card" onclick="speak('ঈ')"><div class="okkhoro">ঈ</div><p>🦅 তে - ঈগল আকাশে উড়ে যায়।</p></div>
-    <div class="card" onclick="speak('উ')"><div class="okkhoro">উ</div><p>🐪 তে - উট চলছে আপন মনে।</p></div> 
-    <div class="card" onclick="speak('ঊ')"><div class="okkhoro">ঊ</div><p>🌞 তে - ঊষা ওঠে পূব কোনে। </p></div> 
-    <div class="card" onclick="speak('ঋ')"><div class="okkhoro">ঋ</div><p>👨‍⚕️ তে - ঋষি মশাই বসেন ধ্যানে।</p></div> 
-    <div class="card" onclick="speak('এ')"><div class="okkhoro">এ</div><p>🪕 তে - একতারাটি সুর তোলে।</p></div> 
-    <div class="card" onclick="speak('ঐ')"><div class="okkhoro">ঐ</div><p>🐘 তে - ঐরাবত চলে সুর দুলে।</p></div> 
-    <div class="card" onclick="speak('ও')"><div class="okkhoro">ও</div><p>🌰 তে - ওল খেও না, ধরবে গলা।</p></div> 
-    <div class="card" onclick="speak('ঔ')"><div class="okkhoro">ঔ</div><p>💊 তে - ঔষধ খেতে মিছে বলা।</p></div>
-  </div>
-</section>
-
-<!-- 🌸 ব্যঞ্জনবর্ণ -->
-<section id="benjon" style="display:none;">
-  <div class="grid">
-    <div class="card" onclick="speak('ক')"><div class="okkhoro">ক</div><p>🦜 তে - কাকাতুয়ার মাথায় ঝুঁটি।</p></div> 
-    <div class="card" onclick="speak('খ')"><div class="okkhoro">খ</div><p>🦊 তে - খেঁকশিয়ালটি পালায় ছুটি।</p></div> 
-    <div class="card" onclick="speak('গ')"><div class="okkhoro">গ</div><p>🐄 তে - গরুর দুধে পুষ্টি ভারি।</p></div> 
-    <div class="card" onclick="speak('ঘ')"><div class="okkhoro">ঘ</div><p>🕰️ তে - ঘড়ি বলে টিক টিক করি।</p></div> 
-    <div class="card" onclick="speak('ঙ')"><div class="okkhoro">ঙ</div><p>⛵ তে - ব্যাঙ মাঝি নৌকা চালায়।</p></div> 
-    <div class="card" onclick="speak('চ')"><div class="okkhoro">চ</div><p>🐦 তে - চড়ুই পাখি গান গায় ।</p></div> 
-    <div class="card" onclick="speak('ছ')"><div class="okkhoro">ছ</div><p>🐐 তে - ছাগলছানা লাফিয়ে চলে।</p></div> 
-    <div class="card" onclick="speak('জ')"><div class="okkhoro">জ</div><p>🚢 তে - জাহাজ ভাসে সাগর জলে।</p></div> 
-    <div class="card" onclick="speak('ঝ')"><div class="okkhoro">ঝ</div><p>🧹 তে - ঝাড়ু হাতে এলো কানাই।</p></div> 
-    <div class="card" onclick="speak('ঞ')"><div class="okkhoro">ঞ</div><p>🐱 তে - মিঞাও বিড়াল লাফিয়ে পালায়।</p></div> 
-    <div class="card" onclick="speak('ট')"><div class="okkhoro">ট</div><p>🐦 তে - টিয়াপাখির ঠোঁটটি লাল।</p></div> 
-    <div class="card" onclick="speak('ঠ')"><div class="okkhoro">ঠ</div><p>👵 তে - ঠাকুরমায়ের শুকনো গাল।</p></div> 
-    <div class="card" onclick="speak('ড')"><div class="okkhoro">ড</div><p>🥥 তে - ডাব খেয়ে করি খেলা।</p></div> 
-    <div class="card" onclick="speak('ঢ')"><div class="okkhoro">ঢ</div><p>🥁 তে - ঢাক বাজে পূজার মেলা।</p></div> 
-    <div class="card" onclick="speak('ণ')"><div class="okkhoro">ণ</div><p>🦌 তে - হরিণ থাকে বনের ধারে।</p></div> 
-    <div class="card" onclick="speak('ত')"><div class="okkhoro">ত</div><p>🍉 তে - তরমুজ খাবো মজা করে।</p></div> 
-    <div class="card" onclick="speak('থ')"><div class="okkhoro">থ</div><p>👜 তে - থলে ভরা টাকা কড়ি।</p></div> 
-    <div class="card" onclick="speak('দ')"><div class="okkhoro">দ</div><p>🖋️ তে - দোয়াত কালি কলমে ভরি।</p></div> 
-    <div class="card" onclick="speak('ধ')"><div class="okkhoro">ধ</div><p>🌾 তে - ধান লাগায় চাষী ভাই। </p></div> 
-    <div class="card" onclick="speak('ন')"><div class="okkhoro">ন</div><p>📘 তে – নোটবুক থাকে সবাই।</p></div> 
-    <div class="card" onclick="speak('প')"><div class="okkhoro">প</div><p>🕊️ তে - পায়রাটি বসে আছে ডালে।</p></div> 
-    <div class="card" onclick="speak('ফ')"><div class="okkhoro">ফ</div><p>🌺 তে - ফুল ফুটেছে খুব সকালে।</p></div> 
-    <div class="card" onclick="speak('ব')"><div class="okkhoro">ব</div><p>🐅 তে - বাঘের গায়ে ডোরা দাগ। </p></div> 
-    <div class="card" onclick="speak('ভ')"><div class="okkhoro">ভ</div><p>🐻 তে - ভাল্লুক নাচে দারুণ রাগ।</p></div> 
-    <div class="card" onclick="speak('ম')"><div class="okkhoro">ম</div><p>🦚 তে - ময়ূর নাচে পেখম মেলে।</p></div> 
-    <div class="card" onclick="speak('য')"><div class="okkhoro">য</div><p>🚗 তে - যাত্রী বোঝাই গাড়ি চলে। </p></div> 
-    <div class="card" onclick="speak('র')"><div class="okkhoro">র</div><p>🐟 তে - রুই মাছ ঝাঁপিয়ে যায়।</p></div> 
-    <div class="card" onclick="speak('ল')"><div class="okkhoro">ল</div><p>🍋 তে - লেবু খেতে মন চায়।</p></div> 
-    <div class="card" onclick="speak('শ')"><div class="okkhoro">শ</div><p>🦊 তে - শিয়াল দৌড়ে পালায় ছুটে।</p></div> 
-    <div class="card" onclick="speak('ষ')"><div class="okkhoro">ষ</div><p>🐂 তে - ষাঁড় ঘুরে মাঠে মাঠে।</p></div> 
-    <div class="card" onclick="speak('স')"><div class="okkhoro">স</div><p>🌊 তে - সাগর জলে ঢেউ ওঠে।</p></div> 
-    <div class="card" onclick="speak('হ')"><div class="okkhoro">হ</div><p>🦆 তে - হাঁস জলে সাঁতার কাটে।</p></div> 
-    <div class="card" onclick="speak('ড়')"><div class="okkhoro">ড়</div><p>🏠 তে - বাড়ি আমার ছোট্ট গ্রামে। </p></div> 
-    <div class="card" onclick="speak('ঢ়')"><div class="okkhoro">ঢ়</div><p>🌦️ তে - আষাঢ় মাসে বৃষ্টি নামে।</p></div> 
-    <div class="card" onclick="speak('য়')"><div class="okkhoro">য়</div><p>🔲 তে - আয়না দেখি মুখ তুলে।  </p></div> 
-    <div class="card" onclick="speak('ৎ')"><div class="okkhoro">ৎ</div><p>🐬 তে - মৎস্য থাকে গভীর জলে।</p></div> 
-    <div class="card" onclick="speak('ং')"><div class="okkhoro">ং</div><p>🦌 তে - হরিণের শিং অনেক ভালো।</p></div> 
-    <div class="card" onclick="speak('ঃ')"><div class="okkhoro">ঃ</div><p>😂 তে - দুঃখ ভুলে খুশিতে চলো।</p></div> 
-    <div class="card" onclick="speak('ঁ')"><div class="okkhoro">ঁ</div><p>🌝 তে - চাঁদের হাঁসিতে উজ্জ্বল আলো।</p></div>
+    <div class="card" onclick="speak('১')"><div class="okkhoro">১</div><p>🌙 এ - চন্দ্র</p><p style="font-size: small;">মানে - একটি চাঁদ</p></div>
+    <div class="card" onclick="speak('২')"><div class="okkhoro">২</div><p>🌗 এ - পক্ষ</p><p style="font-size: small;">মানে - দুটি পক্ষ (কৃষ্ণ পক্ষ ও শুক্ল পক্ষ)</p></div>
+    <div class="card" onclick="speak('৩')"><div class="okkhoro">৩</div><p>👁 এ - নেত্র</p><p style="font-size: small;">মানে - তিনটি চোখ (ডান চক্ষু, বাম চক্ষু ও জ্ঞান চক্ষু)</p></div>
+    <div class="card" onclick="speak('৪')"><div class="okkhoro">৪</div><p>📚 এ - বেদ</p><p style="font-size: small;">মানে - চারটি বেদ (ঋগ্বেদ, সামবেদ, যজুর্বেদ, অথর্ববেদ)</p></div>
+    <div class="card" onclick="speak('৫')"><div class="okkhoro">৫</div><p>🖐️ এ - ইন্দ্রিয়</p><p style="font-size: small;">মানে - পাঁচটি ইন্দ্রিয় (চক্ষু, কর্ণ, নাসা, জিহ্বা, ত্বক)</p></div>
+    <div class="card" onclick="speak('৬')"><div class="okkhoro">৬</div><p>🌸 এ - ঋতু</p><p style="font-size: small;">মানে - ছয়টি ঋতু (গ্রীষ্ম, বর্ষা, শরৎ, হেমন্ত, শীত, বসন্ত)</p></div>
+    <div class="card" onclick="speak('৭')"><div class="okkhoro">৭</div><p>🌈 এ - রামধনু</p><p style="font-size: small;">মানে - রামধনুর সাতটি রং (বেগুনি, নীল, আকাশি, সবুজ, হলুদ, কমলা, লাল)</p></div>
+    <div class="card" onclick="speak('৮')"><div class="okkhoro">৮</div><p>🐘 এ - দিকপাল</p><p style="font-size: small;">মানে - আট দিকপাল (ইন্দ্র, অগ্নি, যম, নৈঋত, বরুণ, বায়ু, কুবের, ঈশান)</p></div>
+    <div class="card" onclick="speak('৯')"><div class="okkhoro">৯</div><p>💎 এ - রত্ন</p><p style="font-size: small;">মানে - ন'টি রত্ন বা গ্রহ (মুক্তা, পদ্মরাগ, নীলকান্ত, গোমেদক, বৈদূর্য, প্রবাল, হীরা, চুনি, পান্না)</p></div>
+    <div class="card" onclick="speak('১০')"><div class="okkhoro">১০</div><p>🕉️ এ - দিক</p><p style="font-size: small;">মানে - দশটি দিক (পুর্ব, পশ্চিম, উত্তর, দক্ষিণ, ইশান, অগ্নি, নৈঋত, বায়ু, উর্দ্ধ, অধঃ)</p></div>
   </div>
 </section>
 
