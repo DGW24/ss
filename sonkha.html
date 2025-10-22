@@ -251,6 +251,8 @@ btn.addEventListener('click',()=>{
   if(!playing){audio.play();btn.textContent='🔇 বন্ধ';playing=true;}
   else{audio.pause();btn.textContent='🔊 সাউন্ড';playing=false;}
 });
+
+// 🌸 Section toggle
 function showSection(sec){
   document.getElementById('swar').style.display=sec==='swar'?'block':'none';
   document.getElementById('benjon').style.display=sec==='benjon'?'block':'none';
@@ -258,35 +260,57 @@ function showSection(sec){
   if(sec==='swar')document.querySelectorAll('.toggleBtn')[0].classList.add('active');
   else document.querySelectorAll('.toggleBtn')[1].classList.add('active');
 }
-document.querySelectorAll('.card').forEach(card=>{
-  card.addEventListener('click', ()=>{
-    let rawText = card.textContent.trim();
-    let text = rawText.replace(/[\u{1F300}-\u{1FAFF}]/gu, '').trim();
-    if(!text) return;
 
-    let utter = new SpeechSynthesisUtterance(text);
+// 🌼 উন্নত ভয়েস সিস্টেম
+let allVoices = [];
+function loadVoices(){
+  allVoices = speechSynthesis.getVoices();
+}
+speechSynthesis.onvoiceschanged = loadVoices;
+loadVoices();
 
-    // 🔊 বাংলা চেনা + fallback ইংরেজি
-    if(/[অআইঈউঊঋএঐওঔক-হ০-৯]/.test(text)) {
-      utter.lang = 'bn-IN'; // 🇮🇳 কিছু ব্রাউজারে এটা কাজ করে
-    } else {
-      utter.lang = 'en-US';
-    }
+function speak(text){
+  if(!text) return;
+  let cleanText = text.replace(/[\u{1F300}-\u{1FAFF}]/gu,'').trim();
+  if(!cleanText) return;
 
-    // যদি বাংলা ভয়েস না থাকে, ইংরেজি ভয়েসে fallback
-    utter.onstart = ()=>{};
-    utter.onerror = ()=>{
-      utter.lang = 'en-US';
-      speechSynthesis.speak(utter);
-    };
+  const utter = new SpeechSynthesisUtterance(cleanText);
 
-    utter.rate = 0.9;
-    utter.pitch = 1.1;
-    speechSynthesis.cancel();
+  // 🔤 ভাষা চেনা
+  const isBangla = /[অআইঈউঊঋএঐওঔক-হ০-৯]/.test(cleanText);
+  utter.lang = isBangla ? 'bn-IN' : 'en-US';
+
+  // 🎙️ সেরা ভয়েস নির্বাচন
+  let voice = allVoices.find(v =>
+    v.lang.startsWith(isBangla ? 'bn' : 'en') &&
+    (v.name.toLowerCase().includes('female') || v.name.toLowerCase().includes('natural'))
+  );
+  if(voice) utter.voice = voice;
+
+  // 🎚️ ভয়েস টোন টিউন
+  utter.rate = isBangla ? 0.9 : 0.95;   // ধীর, মিষ্টি গতি
+  utter.pitch = 1.05;                   // কোমল টোন
+  utter.volume = 1;
+
+  // 🎧 চলমান ভয়েস থামিয়ে নতুন শুরু
+  speechSynthesis.cancel();
+  setTimeout(()=>speechSynthesis.speak(utter),100);
+
+  utter.onerror = () => {
+    // fallback ইংরেজি ভয়েস
+    utter.lang = 'en-US';
+    utter.voice = allVoices.find(v=>v.lang.startsWith('en'));
     speechSynthesis.speak(utter);
+  };
+}
+
+// 📢 কার্ডে ক্লিক করলে বলবে
+document.querySelectorAll('.card').forEach(card=>{
+  card.addEventListener('click',()=>{
+    let raw = card.textContent.trim();
+    speak(raw);
   });
 });
-
 </script>
 </body>
 </html>
