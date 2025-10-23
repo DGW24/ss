@@ -1,0 +1,560 @@
+<!doctype html>
+<html lang="bn">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>🌸 শিশু শিক্ষা কেন্দ্র 🌸</title>
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600&family=Baloo+Da+2:wght@600&display=swap" rel="stylesheet">
+<style>
+*{box-sizing:border-box;scroll-behavior:smooth;}
+body{
+  font-family:'Hind Siliguri',sans-serif;
+  margin:0;
+  display:flex;
+  background:linear-gradient(to top,#b3ffb3 0%,#ccf2ff 60%,#ffffff 100%);
+  overflow-x:hidden;
+  position:relative;
+}
+/* 🌞 Sun */
+.sun{position:fixed;top:40px;right:80px;font-size:60px;animation:rotateSun 30s linear infinite;z-index:0;}
+@keyframes rotateSun{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
+
+/* ☁️ Clouds */
+.cloud{position:fixed;font-size:50px;top:100px;left:-200px;opacity:0.7;animation:moveCloud 60s linear infinite;}
+.cloud:nth-child(1){animation-delay:0s;}
+.cloud:nth-child(2){top:150px;animation-delay:20s;}
+.cloud:nth-child(3){top:200px;animation-delay:40s;}
+@keyframes moveCloud{from{left:-200px;}to{left:110%;}}
+
+/* 🐦 Birds */
+.bird{position:fixed;font-size:30px;animation:flyBird 20s linear infinite;}
+.bird:nth-child(4){top:180px;left:-80px;animation-delay:0s;}
+.bird:nth-child(5){top:220px;left:-200px;animation-delay:10s;}
+@keyframes flyBird{0%{left:-100px;}50%{top:220px;}100%{left:110%;}}
+
+/* 🌳 Trees & Flowers */
+.ground{position:fixed;bottom:0;left:0;width:100%;height:200px;z-index:0;overflow:hidden;}
+.tree{position:absolute;bottom:40px;font-size:50px;animation:swayTree 4s ease-in-out infinite alternate;}
+.tree:nth-child(1){right:50px;}
+.tree:nth-child(2){right:150px;}
+.tree:nth-child(3){right:300px;}
+.tree:nth-child(4){right:450px;}
+@keyframes swayTree{from{transform:rotate(-2deg);}to{transform:rotate(2deg);}}
+.flower{position:absolute;bottom:20px;font-size:30px;animation:bloom 3s ease-in-out infinite alternate;}
+.flower:nth-child(5){left:700px;}
+.flower:nth-child(6){left:570px;}
+.flower:nth-child(7){left:260px;}
+@keyframes bloom{from{transform:scale(0.8);}to{transform:scale(1.2);}}
+
+/* 🐄 Cow */
+.cow{position:absolute;bottom:50px;left:-100px;font-size:50px;animation:cowMove 40s linear infinite;}
+@keyframes cowMove{0%{left:-150px;}50%{left:60%;}100%{left:-150px;}}
+
+/* Header & Nav */
+header{position:fixed;top:0;left:0;width:100%;background:linear-gradient(90deg,#ffa751,#ffe259);padding:10px 0;text-align:center;color:white;font-family:'Baloo Da 2',cursive;font-size:30px;text-shadow:1px 2px 3px rgba(0,0,0,0.2);z-index:1000;}
+nav.top{position:fixed;top:64px;left:0;width:100%;background:#fff8d8b8;display:flex;justify-content:center;gap:25px;padding:10px 0;z-index:999;}
+nav.top a{color:#333;text-decoration:none;font-weight:600;font-size:18px;transition:0.3s;}
+nav.top a:hover{color:#e67e22;}
+
+/* Sidebar */
+aside{position:fixed;top:120px;left:0;width:250px;background:transparent;height:calc(100% - 120px);overflow-y:auto;padding:10px 14px;z-index:900;}
+aside a{display:block;color:#444;background:#fffbe6;padding:10px 14px;margin:8px 0;text-decoration:none;border-radius:10px;font-weight:500;transition:0.3s;}
+aside a:hover{background:linear-gradient(90deg,#fff099,#ffe066);color:#d35400;transform:translateX(5px);}
+
+/* Main */
+main{margin-top:120px;margin-left:270px;padding:20px;width:calc(100% - 270px);min-height:100vh;z-index:1;}
+section{padding:15px;background:rgba(255,255,255,0.3);border-radius:14px;box-shadow:0 3px 8px rgba(0,0,0,0.1);margin-bottom:15px;}
+section h2{font-family:'Baloo Da 2',cursive;color:#e67e22;border-bottom:3px solid #ffcc33;display:inline-block;padding-bottom:5px;margin-bottom:10px;}
+.grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr); /* সবসময় 2 কলাম */
+  gap: 12px;
+}
+.card {
+  background:#fffbe6;
+  border-radius:10px;
+  text-align:left;
+  padding:12px;
+  font-size:24px;
+  font-family:'Baloo Da 2',cursive;
+  color:#e67e22;
+  box-shadow:0 2px 6px rgba(0,0,0,0.1);
+  transition:0.3s;
+  height: 300px;     /* horizontally centered */
+  line-height:normal;
+  color: #007bff;
+  padding-left: 50px;
+  padding-right: 50px;
+}
+.card:hover{transform:scale(1.08);background:#ffef99;}
+.toggleBtn{padding:10px 16px;margin:5px;font-size:17px;border:none;border-radius:8px;cursor:pointer;background:#ffdd99;transition:0.3s;}
+.toggleBtn.active{background:#ffcc33;color:#fff;}
+footer{text-align:center;padding:15px;font-size:14px;color:#555;margin-top:20px;}
+.okkhoro {
+  font-size: 36px;
+  line-height: 50px; /* কমিয়ে দিলাম */
+  margin-bottom: 3px;
+  color: #20c100;
+  border-bottom:3px double #3347ff;
+}
+/* 🔊 Sound Button */
+#soundBtn{position:fixed;bottom:20px;right:20px;background:#fff3b0;border:2px solid #ffcc33;border-radius:8px;padding:8px 16px;font-size:16px;cursor:pointer;z-index:1100;}
+/* 📱 Mobile Responsive Design */
+@media (max-width: 768px) {
+
+  body {
+    flex-direction: column;
+  }
+
+  header {
+    font-size: 22px;
+    padding: 12px 0;
+  }
+
+  nav.top {
+    flex-wrap: wrap;
+    gap: 10px;
+    font-size: 16px;
+    padding: 8px;
+  }
+
+  aside {
+    position: relative;
+    top: 0;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    background: #fffbe6;
+    padding: 10px;
+    border-radius: 12px;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+    margin-top: 80px;
+  }
+
+  aside a {
+    margin: 5px;
+    flex: 1 1 40%;
+    text-align: center;
+    font-size: 14px;
+  }
+
+  main {
+    margin: 10px;
+    margin-top: 20px;
+    margin-left: 0;
+    padding: 15px;
+    width: auto;
+  }
+
+  section {
+    padding: 20px;
+  }
+
+  .grid {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr); /* সবসময় 2 কলাম */
+  gap: 12px;
+}
+
+  .card {
+    font-size: 26px;
+    padding: 10px;
+  }
+
+  #soundBtn {
+    font-size: 14px;
+    padding: 6px 12px;
+    bottom: 15px;
+    right: 15px;
+  }
+
+  /* 🌳 ছোট স্ক্রিনে ব্যাকগ্রাউন্ড এলিমেন্ট গুলো হালকা রাখো */
+  .tree, .flower, .cow, .cloud, .sun, .bird {
+    opacity: 0.5;
+    font-size: smaller;
+  }
+}
+
+</style>
+</head>
+<body>
+
+<!-- Animations -->
+<div class="sun">🌞</div>
+<div class="cloud">☁️</div><div class="cloud">☁️</div><div class="cloud">☁️</div>
+<div class="bird">🐦</div><div class="bird">🐦</div>
+<div class="ground">
+  <div class="tree">🌳</div><div class="tree">🌳</div><div class="tree">🌳</div><div class="tree">🌳</div>
+  <div class="cow">🐄</div>
+  <div class="flower">🌼</div><div class="flower">🌼</div><div class="flower">🌼</div>
+</div>
+
+<header>🌸 শিশু শিক্ষা কেন্দ্র 🌸</header>
+
+<nav class="top">
+<a href="index.html">🏠 হোম</a>
+<a href="about.html">আমাদের সম্পর্কে</a>
+<a href="contact.html">যোগাযোগ</a>
+</nav>
+
+<aside>
+<a href="borno.html">বর্ণপরিচয়</a>
+<a href="sonkha.html">সংখ্যা শেখা</a>
+<a href="abc.html">ইংরেজি বর্ণমালা</a>
+<a href="e123.html">ইংরেজি সংখ্যা</a>
+<a href="bpoem.html">বাংলা ছড়া</a>
+<a href="engpoem.html">ইংরেজি ছড়া</a>
+<a href="flor.html">ফুলের পরিচয়</a>
+<a href="frut.html">ফলের পরিচয়</a>
+<a href="animl.html">পশুর পরিচয়</a>
+<a href="brd.html">পাখির পরিচয়</a>
+<a href="food.html">খাদ্যের পরিচয়</a>
+<a href="vegetable.html">শাঁক-সবজি পরিচয়</a>
+<a href="vehicle.html">যানবাহন পরিচয়</a>
+<a href="usetng.html">ব্যবহারিক জিনিস</a>
+<a href="bodypts.html">মানব অঙ্গ পরিচয়</a>
+<a href="clor.html">রঙ চেনা</a>
+<a href="relig.html">শাস্ত্র কথা</a>
+<a href="quiz.html">নিজে উত্তর দাও</a>
+</aside>
+
+<main>
+<section>
+  <h2>🌼 বাংলা ছড়া</h2>
+  <p>ছোট্ট বন্ধুদের জন্য নিয়ে এসেছি ৪০টি মজার ছড়া — বাংলা ছড়া মন দিয়ে শোনো, আর আমার সাথে বলো </p>
+  
+  <div class="grid">
+    <div class="card" onclick="speak('')">
+  <div class="okkhoro">আতা গাছে তোতা পাখি</div>
+  <p>আতা গাছে তোতা পাখি <br>ডালিম গাছে মউ,<br>এত ডাকি তবু কথা <br>কও না কেন বউ?</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">হাট্টিমাটিম টিম</div>
+  <p>হাট্টি মাটিম টিম,<br>তারা মাঠে পাড়ে ডিম,<br>তাদের খাড়া দুটো শিং,<br>তারা হাট্টি মাটিম টিম।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">আয় আয় চাঁদ মামা</div>
+  <p>আয় আয় চাঁদ মামা <br>টিপ দিয়ে যা,<br>চাঁদের কপালে চাঁদ <br>টিপ দিয়ে যা।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">ঘুম পাড়ানি মাসি পিসি</div>
+  <p>ঘুম পাড়ানি মাসি পিসি <br>মোদের বাড়ি এসো,<br>খাট নাই পালং নাই <br>চোখ পেতে বোসো।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">আয়রে আয় টিয়ে</div>
+  <p>আয়রে আয় টিয়ে <br>নায়ে ভরা দিয়ে,<br>না নিলো কুলো <br>বেঁধে আনলো চুলো।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">খোকন খোকন ডাক পাড়ি</div>
+  <p>খোকন খোকন ডাক পাড়ি <br>খোকন মোদের কার বাড়ি?<br>আয় রে খোকন ঘরে আয় <br>দুধ মাখা ভাত কাকে খায়।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">বাক বাকুম পায়রা</div>
+  <p>বাক্ বাকুম পায়রা <br>মাথায় দিয়ে টায়রা,<br>বউ সেজেছে কাল কি <br>চড়বে সোনার পালকি।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">আম পাতা জোড়া জোড়া</div>
+  <p>আম পাতা জোড়া জোড়া <br>মারবো চাবুক চড়বো ঘোড়া,<br>ওরে দিদি সরে দাঁড়া <br>আসছে আমার পাগলা ঘোড়া।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">তাই তাই তাই</div>
+  <p>তাই তাই তাই <br>মামার বাড়ি যাই,<br>মামা দিল দুধ-ভাত <br>পেট ভরে খাই।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">চাঁদ উঠেছে ফুল ফুটেছে</div>
+  <p>চাঁদ উঠেছে ফুল ফুটেছে <br>কদম তলায় কে?<br>হাতি নাচছে ঘোড়া নাচছে <br>সোনা মনির বে।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">নোটন নোটন পায়রা গুলি</div>
+  <p>নোটন নোটন পায়রা গুলি <br>ঝোটন বেঁধেছে,<br>ওপারেতে ছেলে মেয়ে <br>নাইতে নেমেছে।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">আগ ডুম বাগ ডুম</div>
+  <p>আগ ডুম বাগ ডুম <br>ঘোড়া ডুম সাজে,<br>ঢাক মৃদং ঝাঁঝর বাজে <br>বাজতে বাজতে চলল ঢুলি।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">ভোর হলো দোর খোলো</div>
+  <p>ভোর হলো দোর খোলো <br>খুকুমণি ওঠো রে,<br>ঐ ডাকে জুঁই শাখে <br>ফুল খুকি ছোটো রে।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">ইতল বিতল</div>
+  <p>ইতল বিতল গাছের পাতা <br>গাছের তলায় ব্যাঙের ছাতা,<br>বৃষ্টি পড়ে ভাঙে ছাতা <br>ডোবায় ডুবে ব্যাঙের মাথা।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">ঐ দেখা যায় তাল গাছ</div>
+  <p>ঐ দেখা যায় তাল গাছ <br>ঐ আমাদের গাঁ,<br>ঐ খানেতে বাস করে <br>কানা বগীর ছা।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">খোকন খোকন করে মায়</div>
+  <p>খোকন খোকন করে মায়, <br>খোকন গেছে কাদের নায়?<br>সাতটা পাঁজি দাঁড় বায়, <br>খোকন মণি ফিরে আয়।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">মেঘের কোলে রোদ</div>
+  <p>মেঘের কোলে রোদ হেসেছে <br>বাদল গেছে টুটি,<br>আজ আমাদের ছুটি ও ভাই <br>আজ আমাদের ছুটি।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">কাঠবেড়ালি</div>
+  <p>কাঠবেড়ালি! কাঠবেড়ালি! <br>পেয়ারা তুমি খাও?<br>গুড়-মুড়ি খাও? দুধ-ভাত খাও?<br>বাতাবি লেবু? লাও?</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">রেল গাড়ি</div>
+  <p>ঝক্ ঝক্ ঝক্ ট্রেন চলেছে <br>রাত দুপুরে অই,<br>ট্রেন চলেছে, ট্রেন চলেছে <br>ট্রেনের বাড়ি কই?</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">প্রজাপতি প্রজাপতি</div>
+  <p>প্রজাপতি প্রজাপতি <br>কোথায় পেলে ভাই<br>এমন রঙিন পাখা,<br>টুক  টুকে লাল নীল <br>ঝিলি মিলি আঁকা বাঁকা।</p>
+</div>
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">ছেলে ঘুমালো পাড়া জুড়ালো</div>
+  <p>ছেলে ঘুমালো পাড়া জুড়ালো<br>
+  বর্গী এলো দেশে,<br>
+  বুলবুলিতে ধান খেয়েছে<br>
+  খাজনা দেব কিসে?</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">বৃষ্টি পড়ে টাপুর টুপুর</div>
+  <p>বৃষ্টি পড়ে টাপুর টুপুর<br>
+  নদেয় এলো বান,<br>
+  শিব ঠাকুরের বিয়ে হলো<br>
+  তিন কন্যে দান।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">দোল দোল দুলুনি</div>
+  <p>দোল দোল দুলুনি<br>
+  রাঙা মাথায় চিরুনি,<br>
+  বর আসবে এখনি<br>
+  নিয়ে যাবে তখনি।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">আদুড় বাদুড়</div>
+  <p>আদুড় বাদুড় চালতা বাদুড়<br>
+  চালতা তলে কে?<br>
+  আমি আছি ভয় কি তোর?<br>
+  চালতা নে তুই।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">খোকা যাবে শ্বশুর বাড়ি</div>
+  <p>খোকা যাবে শ্বশুর বাড়ি<br>
+  সঙ্গে যাবে কে?<br>
+  ঘরে আছে হুলো বেড়াল<br>
+  কোমর বেঁধেছে।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">আয় রে পাখি লেজ ঝোলা</div>
+  <p>আয় রে পাখি লেজ ঝোলা,<br>
+  খোকন কে কর বিয়ে।<br>
+  খোকন যাবে শ্বশুরবাড়ি<br>
+  পালকি চড়ে নিয়ে।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">কানা বগীর ছা</div>
+  <p>ওরে ও কানা বগীর ছা,<br>
+  খাচ্ছিস কেন? খা।<br>
+  খাবার মোটে রুচে না,<br>
+  পোকা একটা দে না।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">বাবুরাম সাপুড়ে</div>
+  <p>বাবুরাম সাপুড়ে,<br>
+  কোথা যাস বাপুরে?<br>
+  আয় বাবা দেখে যা,<br>
+  দুটো সাপ রেখে যা।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">ছোট্ট একটি পাখি</div>
+  <p>ছোট্ট একটি পাখি<br>
+  দুটি তার ডানা,<br>
+  যেতে কোনোখানে<br>
+  নেই তার মানা।</p>
+</div>
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">সূর্য মামা</div>
+  <p>সূর্য মামা হাসে হেসে,<br>
+  আলো ঢালে দেশে দেশে।<br>
+  সকাল হলো উঠো সবাই,<br>
+  গাই খুশিতে দিনের গানই।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">ফুল ফুটেছে মাঠে মাঠে</div>
+  <p>ফুল ফুটেছে মাঠে মাঠে,<br>
+  পাখি নাচে পাতার সাথে।<br>
+  মৌমাছি যায় গুনগুনিয়ে,<br>
+  সকালবেলায় রোদে দুলিয়ে।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">নদীর ধারে ছোট্ট খোকা</div>
+  <p>নদীর ধারে ছোট্ট খোকা,<br>
+  জলে ভাসায় নৌকা চোখা।<br>
+  নৌকা ভাসে দুলে দুলে,<br>
+  হাসে খোকা ফুলের ফলে।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">বনের মাঝে হরিণ দৌড়ে</div>
+  <p>বনের মাঝে হরিণ দৌড়ে,<br>
+  বাতাস বয় ছন্দ বয়ে।<br>
+  পাখি গায় গান রোজ ভোরে,<br>
+  ঘাসে ঝরে শিশির সয়।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">চাঁদের মুখে হাসির আলো</div>
+  <p>চাঁদের মুখে হাসির আলো,<br>
+  রাতের আকাশ ভালো ভালো।<br>
+  তারা গোনে ছোট্ট খোকা,<br>
+  ঘুমিয়ে পড়ে চোখে নীলা।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">মেঘ দেখে খুশি ব্যাঙাচি</div>
+  <p>মেঘ দেখে খুশি ব্যাঙাচি,<br>
+  বৃষ্টি এলে নাচে আজি।<br>
+  টুপটাপ বৃষ্টি ঝরে,<br>
+  কাদায় খেলে সবাই ঘরে।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">খোকা মাখে দুধ-ভাত</div>
+  <p>খোকা মাখে দুধ-ভাত খেয়ে,<br>
+  মা বলে আহা! বেশ হেসে।<br>
+  মুখে মাখে ভাতের দাগ,<br>
+  খুশিতে বাজে খোকা রাগ।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">প্রজাপতি উড়ে যায়</div>
+  <p>প্রজাপতি উড়ে যায়,<br>
+  রঙিন পাখা দোলে হায়।<br>
+  ফুলের ডালে বসে হাসে,<br>
+  রোদে রঙিন পাখা ভাসে।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">মাঠে চাষি ধান কাটে</div>
+  <p>মাঠে চাষি ধান কাটে,<br>
+  ঘাম মিশে যায় মাটির সাথে।<br>
+  গানের তালে কাজের সুখ,<br>
+  সোনার দেশে নেই তো দুখ।</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">হাঁস চলে যায় পুকুরপারে</div>
+  <p>হাঁস চলে যায় পুকুরপারে,<br>
+  ছানা হাঁসও থাকে তারে।<br>
+  কুঁক কুঁক ডাকে জলে,<br>
+  খেলে সবাই মিলে মিলে।</p>
+</div>
+
+  </div>
+</section>
+
+<footer>© ২০২৫ শিশু শিক্ষা কেন্দ্র | Designed with ❤️ for kids</footer>
+
+<!-- Sound Button -->
+<button id="soundBtn">🔊 সাউন্ড</button>
+<audio id="natureAudio" loop>
+  <source src="brdado.mp3" type="audio/mp3">
+</audio>
+
+<script>
+const audio=document.getElementById('natureAudio');
+const btn=document.getElementById('soundBtn');
+let playing=false;
+btn.addEventListener('click',()=>{
+  if(!playing){audio.play();btn.textContent='🔇 বন্ধ';playing=true;}
+  else{audio.pause();btn.textContent='🔊 সাউন্ড';playing=false;}
+});
+
+// 🌸 Section toggle
+function showSection(sec){
+  document.getElementById('swar').style.display=sec==='swar'?'block':'none';
+  document.getElementById('benjon').style.display=sec==='benjon'?'block':'none';
+  document.querySelectorAll('.toggleBtn').forEach(b=>b.classList.remove('active'));
+  if(sec==='swar')document.querySelectorAll('.toggleBtn')[0].classList.add('active');
+  else document.querySelectorAll('.toggleBtn')[1].classList.add('active');
+}
+
+// 🌼 উন্নত ভয়েস সিস্টেম
+let allVoices = [];
+function loadVoices(){
+  allVoices = speechSynthesis.getVoices();
+}
+speechSynthesis.onvoiceschanged = loadVoices;
+loadVoices();
+
+function speak(text){
+  if(!text) return;
+  let cleanText = text.replace(/[\u{1F300}-\u{1FAFF}]/gu,'').trim();
+  if(!cleanText) return;
+
+  const utter = new SpeechSynthesisUtterance(cleanText);
+
+  // 🔤 ভাষা চেনা
+  const isBangla = /[অআইঈউঊঋএঐওঔক-হ০-৯]/.test(cleanText);
+  utter.lang = isBangla ? 'bn-IN' : 'en-US';
+
+  // 🎙️ সেরা ভয়েস নির্বাচন
+  let voice = allVoices.find(v =>
+    v.lang.startsWith(isBangla ? 'bn' : 'en') &&
+    (v.name.toLowerCase().includes('female') || v.name.toLowerCase().includes('natural'))
+  );
+  if(voice) utter.voice = voice;
+
+  // 🎚️ ভয়েস টোন টিউন
+  utter.rate = isBangla ? 0.9 : 0.95;   // ধীর, মিষ্টি গতি
+  utter.pitch = 1.05;                   // কোমল টোন
+  utter.volume = 1;
+
+  // 🎧 চলমান ভয়েস থামিয়ে নতুন শুরু
+  speechSynthesis.cancel();
+  setTimeout(()=>speechSynthesis.speak(utter),100);
+
+  utter.onerror = () => {
+    // fallback ইংরেজি ভয়েস
+    utter.lang = 'en-US';
+    utter.voice = allVoices.find(v=>v.lang.startsWith('en'));
+    speechSynthesis.speak(utter);
+  };
+}
+
+// 📢 কার্ডে ক্লিক করলে বলবে
+document.querySelectorAll('.card').forEach(card=>{
+  card.addEventListener('click',()=>{
+    let raw = card.textContent.trim();
+    speak(raw);
+  });
+});
+</script>
+</body>
+</html>

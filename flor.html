@@ -41,8 +41,8 @@ body{
 .tree:nth-child(4){right:450px;}
 @keyframes swayTree{from{transform:rotate(-2deg);}to{transform:rotate(2deg);}}
 .flower{position:absolute;bottom:20px;font-size:30px;animation:bloom 3s ease-in-out infinite alternate;}
-.flower:nth-child(5){left:100px;}
-.flower:nth-child(6){left:180px;}
+.flower:nth-child(5){left:700px;}
+.flower:nth-child(6){left:570px;}
 .flower:nth-child(7){left:260px;}
 @keyframes bloom{from{transform:scale(0.8);}to{transform:scale(1.2);}}
 
@@ -64,10 +64,10 @@ aside a:hover{background:linear-gradient(90deg,#fff099,#ffe066);color:#d35400;tr
 /* Main */
 main{margin-top:120px;margin-left:270px;padding:20px;width:calc(100% - 270px);min-height:100vh;z-index:1;}
 section{padding:15px;background:rgba(255,255,255,0.3);border-radius:14px;box-shadow:0 3px 8px rgba(0,0,0,0.1);margin-bottom:15px;}
-section h2{font-family:'Baloo Da 2',cursive;color:#e67e22;border-bottom:3px solid #ffcc33;display:inline-block;padding-bottom:5px;margin-bottom:10px;}
+section h1{font-family:'Baloo Da 2',cursive;color:#e67e22;border-bottom:3px solid #ffcc33;display:inline-block;padding-bottom:5px;margin-bottom:10px;}
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* সবসময় 2 কলাম */
+  grid-template-columns: repeat(3, 1fr); /* সবসময় 2 কলাম */
   gap: 12px;
 }
 .card {
@@ -75,27 +75,32 @@ section h2{font-family:'Baloo Da 2',cursive;color:#e67e22;border-bottom:3px soli
   border-radius:10px;
   text-align:center;
   padding:12px;
-  font-size:28px;
+  font-size:22px;
   font-family:'Baloo Da 2',cursive;
   color:#e67e22;
   box-shadow:0 2px 6px rgba(0,0,0,0.1);
   transition:0.3s;
-  height: 250px;
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* মাঝখানে লাইন */
-  align-items: center;     /* horizontally centered */
-  line-height: 0px;
+  height: 300px;     /* horizontally centered */
+  line-height:normal;
+  color: #007bff;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 .card:hover{transform:scale(1.08);background:#ffef99;}
 .toggleBtn{padding:10px 16px;margin:5px;font-size:17px;border:none;border-radius:8px;cursor:pointer;background:#ffdd99;transition:0.3s;}
 .toggleBtn.active{background:#ffcc33;color:#fff;}
 footer{text-align:center;padding:15px;font-size:14px;color:#555;margin-top:20px;}
 .okkhoro {
-  font-size: 140px;
-  line-height: 120px; /* কমিয়ে দিলাম */
-  margin-bottom: 5px; /* নিচের লেখার জন্য স্পেস */
+  font-size: 36px;
+  line-height: 50px; /* কমিয়ে দিলাম */
+  margin-bottom: 3px;
+  color: #20c100;
+  
+}
+img {
+  width: 150px;
+  height: 150px;
+  border-radius: 10px;
 }
 /* 🔊 Sound Button */
 #soundBtn{position:fixed;bottom:20px;right:20px;background:#fff3b0;border:2px solid #ffcc33;border-radius:8px;padding:8px 16px;font-size:16px;cursor:pointer;z-index:1100;}
@@ -210,7 +215,11 @@ footer{text-align:center;padding:15px;font-size:14px;color:#555;margin-top:20px;
 <a href="frut.html">ফলের পরিচয়</a>
 <a href="animl.html">পশুর পরিচয়</a>
 <a href="brd.html">পাখির পরিচয়</a>
+<a href="food.html">খাদ্যের পরিচয়</a>
+<a href="vegetable.html">শাঁক-সবজি পরিচয়</a>
+<a href="vehicle.html">যানবাহন পরিচয়</a>
 <a href="usetng.html">ব্যবহারিক জিনিস</a>
+<a href="bodypts.html">মানব অঙ্গ পরিচয়</a>
 <a href="clor.html">রঙ চেনা</a>
 <a href="relig.html">শাস্ত্র কথা</a>
 <a href="quiz.html">নিজে উত্তর দাও</a>
@@ -218,36 +227,309 @@ footer{text-align:center;padding:15px;font-size:14px;color:#555;margin-top:20px;
 
 <main>
 <section>
-  <h2>🌼 ইংরেজি বর্ণমালা</h2>
-  <p>ছোট্ট বন্ধুদের শিক্ষার আসর — ইংরেজি বর্ণমালা শেখা!</p>
+  <h1>🌼 ফুলের পরিচয়</h1>
+  <p>ছোট্ট বন্ধুদের জন্য নিয়ে এসেছি ৫০ টি মজার ফুলের পরিচয়। মন দিয়ে শোনো, আর আমার সাথে বলো </p>
   
   <div class="grid">
-    <div class="card" onclick="speak('A')"><div class="okkhoro">A</div><p>🍎 তে - Apple</p><p style="font-size: small;">Apple মানে - আপেল</p></div>
-    <div class="card" onclick="speak('B')"><div class="okkhoro">B</div><p>⚽ তে - Ball</p><p style="font-size: small;">Ball মানে - বল</p></div>
-    <div class="card" onclick="speak('C')"><div class="okkhoro">C</div><p>🐈 তে - Cat</p><p style="font-size: small;">Cat মানে - বিড়াল</p></div>
-    <div class="card" onclick="speak('D')"><div class="okkhoro">D</div><p>🐶 তে - Dog</p><p style="font-size: small;">Dog মানে - কুকুর</p></div>
-    <div class="card" onclick="speak('E')"><div class="okkhoro">E</div><p>🥚 তে - Egg</p><p style="font-size: small;">Egg মানে - ডিম</p></div>
-    <div class="card" onclick="speak('F')"><div class="okkhoro">F</div><p>🐟 তে - Fish</p><p style="font-size: small;">Fish মানে - মাছ</p></div>
-    <div class="card" onclick="speak('G')"><div class="okkhoro">G</div><p>🦒 তে - Giraffe</p><p style="font-size: small;">Giraffe মানে - জিরাফ</p></div>
-    <div class="card" onclick="speak('H')"><div class="okkhoro">H</div><p>🏠 তে - House</p><p style="font-size: small;">House মানে - ঘর</p></div>
-    <div class="card" onclick="speak('I')"><div class="okkhoro">I</div><p>🍦 তে - Ice-cream</p><p style="font-size: small;">Ice-cream মানে - আইসক্রিম</p></div>
-    <div class="card" onclick="speak('J')"><div class="okkhoro">J</div><p>🤹 তে - Joker</p><p style="font-size: small;">Joker মানে - ভাঁড়</p></div>
-    <div class="card" onclick="speak('K')"><div class="okkhoro">K</div><p>🦘 তে - Kangaroo</p><p style="font-size: small;">Kangaroo মানে - ক্যাঙ্গারু</p></div>
-    <div class="card" onclick="speak('L')"><div class="okkhoro">L</div><p>🦁 তে - Lion</p><p style="font-size: small;">Lion মানে - সিংহ</p></div>
-    <div class="card" onclick="speak('M')"><div class="okkhoro">M</div><p>🐒 তে - Monkey</p><p style="font-size: small;">Monkey মানে - বানর</p></div>
-    <div class="card" onclick="speak('N')"><div class="okkhoro">N</div><p>🐦 তে - Nest</p><p style="font-size: small;">Nest মানে - পাখির বাসা</p></div>
-    <div class="card" onclick="speak('O')"><div class="okkhoro">O</div><p>🐙 তে - Octopus</p><p style="font-size: small;">Octopus মানে - অক্টোপাস</p></div>
-    <div class="card" onclick="speak('P')"><div class="okkhoro">P</div><p>🦜 তে - Parrot</p><p style="font-size: small;">Parrot মানে - টিয়া পাখি</p></div>
-    <div class="card" onclick="speak('Q')"><div class="okkhoro">Q</div><p>👸 তে - Queen</p><p style="font-size: small;">Queen মানে - রাণী</p></div>
-    <div class="card" onclick="speak('R')"><div class="okkhoro">R</div><p>🐇 তে - Rabbit</p><p style="font-size: small;">Rabbit মানে - খরগোশ</p></div>
-    <div class="card" onclick="speak('S')"><div class="okkhoro">S</div><p>🐍 তে - Snake</p><p style="font-size: small;">Snake মানে - সাপ</p></div>
-    <div class="card" onclick="speak('T')"><div class="okkhoro">T</div><p>🐅 তে - Tiger</p><p style="font-size: small;">Tiger মানে - বাঘ</p></div>
-    <div class="card" onclick="speak('U')"><div class="okkhoro">U</div><p>☂️ তে - Umbrella</p><p style="font-size: small;">Umbrella মানে - ছাতা</p></div>
-    <div class="card" onclick="speak('V')"><div class="okkhoro">V</div><p>🎻 তে - Violin</p><p style="font-size: small;">Violin মানে - বেহালা</p></div>
-    <div class="card" onclick="speak('W')"><div class="okkhoro">W</div><p>🐺 তে - Wolf</p><p style="font-size: small;">Wolf মানে - নেকড়ে</p></div>
-    <div class="card" onclick="speak('X')"><div class="okkhoro">X</div><p>🎶 তে - Xylophone</p><p style="font-size: small;">Xylophone মানে - বাদ্যযন্ত্র</p></div>
-    <div class="card" onclick="speak('Y')"><div class="okkhoro">Y</div><p>🛥️ তে - Yacht</p><p style="font-size: small;">Yacht মানে - নৌকা</p></div>
-    <div class="card" onclick="speak('Z')"><div class="okkhoro">Z</div><p>🦓 তে - Zebra</p><p style="font-size: small;">Zebra মানে - জেব্রা</p></div>
+   <div class="card" onclick="speak('')">
+    <img src="flower/1.jpg">
+    <div class="okkhoro">গোলাপ</div>
+    <p>Rose</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="flower/2.png">
+    <div class="okkhoro">জুঁই</div>
+    <p>Jasmine</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="flower/3.jpg">
+    <div class="okkhoro">পদ্ম</div>
+    <p>Lotus</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="flower/4.png">
+    <div class="okkhoro">ডেইজি</div>
+    <p>Daisy</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="flower/5.jpg">
+    <div class="okkhoro">সূর্যমুখী</div>
+    <p>Sunflower</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="flower/6.jpg">
+    <div class="okkhoro">হলিহক</div>
+    <p>Hollyhock</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="flower/7.jpg">
+    <div class="okkhoro">স্ট্রামোনিয়াম</div>
+    <p>Stramonium</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="flower/8.jpg">
+    <div class="okkhoro">স্কারলেট মিল্কউইড</div>
+    <p>Scarlet Milkweed</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="flower/9.jpg">
+    <div class="okkhoro">শেমপ্ল্যান্ট</div>
+    <p>Shameplant</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="flower/10.jpg">
+    <div class="okkhoro">জেসমিনাম সাম্বাক</div>
+    <p>Jasminum Sambac</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="flower/11.jpg">
+    <div class="okkhoro">সাদা ফ্রাঙ্গিপানি</div>
+    <p>White Frangipani</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="flower/12.jpg">
+    <div class="okkhoro">মহিলার স্লিপার অর্কিড</div>
+    <p>Lady's slipper orchid</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="flower/13.jpg">
+    <div class="okkhoro">ল্যাভেন্ডার</div>
+    <p>Lavender</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="flower/14.jpg">
+    <div class="okkhoro">মুরায়া</div>
+    <p>Murraya</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="flower/15.jpg">
+    <div class="okkhoro">প্রিকলি নাশপাতি</div>
+    <p>Prickly Pear</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="flower/16.png">
+    <div class="okkhoro">ম্যাগনোলিয়া</div>
+    <p>Magnolia</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="flower/17.jpg">
+    <div class="okkhoro">ময়ূর ফুল</div>
+    <p>Peacock Flower</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="flower/18.jpg">
+    <div class="okkhoro">হলুদ গাঁদা</div>
+    <p>Yellow Marigold</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="flower/19.jpg">
+    <div class="okkhoro">হলুদ ওলেন্ডার</div>
+    <p>Yellow Oleander</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="flower/20.jpg">
+    <div class="okkhoro">নিত্য মালতী</div>
+    <p>Periwinkle</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="flower/21.jpg">
+    <div class="okkhoro">পাত্র গাঁদা</div>
+    <p>Pot Marigold</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="flower/22.jpg">
+    <div class="okkhoro">বালসাম</div>
+    <p>Balsam</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="flower/23.jpg">
+    <div class="okkhoro">পোস্ত ফুল</div>
+    <p>Poppy Flower</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="flower/24.jpg">
+    <div class="okkhoro">পাণ্ডানাস</div>
+    <p>Pandanus</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="flower/25.jpg">
+    <div class="okkhoro">অপরাজিতা</div>
+    <p>Butterfly Pea</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="Puncture Vine">
+    <div class="okkhoro">পাংচার ভাইন</div>
+    <p>Puncture Vine (Pangchar Vine)</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="Blue Water Lily">
+    <div class="okkhoro">ব্লু ওয়াটার লিলি</div>
+    <p>Blue Water Lily (Blue Water Lily)</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="Cobra Saffron">
+    <div class="okkhoro">কোবরা জাফরান</div>
+    <p>Cobra Saffron (Kobra Jafran)</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="Narcissus">
+    <div class="okkhoro">নার্সিসাস</div>
+    <p>Narcissus (Narcissus)</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="Star Jasmine">
+    <div class="okkhoro">তারকা জেসমিন</div>
+    <p>Star Jasmine (Tarka Jesmin)</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="Tulip">
+    <div class="okkhoro">টিউলিপ</div>
+    <p>Tulip (Tulip)</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="Golden Shower">
+    <div class="okkhoro">গোল্ডেন শাওয়ার</div>
+    <p>Golden Shower (Golden Shower)</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="Dahlia">
+    <div class="okkhoro">ডালিয়া</div>
+    <p>Dahlia (Dahlia)</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="Delonix Regia">
+    <div class="okkhoro">ডেলোনিক্স রেজিয়া</div>
+    <p>Delonix Regia (Delonix Regia)</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="Hibiscus">
+    <div class="okkhoro">হিবিস্কাস</div>
+    <p>Hibiscus (Hibiscus)</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="Chrysanthemum">
+    <div class="okkhoro">চন্দ্রমল্লিকা</div>
+    <p>Chrysanthemum (Chandramallika)</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="Creeper">
+    <div class="okkhoro">লতা</div>
+    <p>Creeper (Lata)</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="Chamomile">
+    <div class="okkhoro">ক্যামোমাইল</div>
+    <p>Chamomile (Chamomile)</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="Crape Jasmine">
+    <div class="okkhoro">ক্রেপ জেসমিন</div>
+    <p>Crape Jasmine (Krep Jesmin)</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="Crossandra">
+    <div class="okkhoro">ক্রসেন্দ্রা</div>
+    <p>Crossandra (Crossandra)</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="Grand Crinum Lily">
+    <div class="okkhoro">গ্র্যান্ড ক্রিনাম লিলি</div>
+    <p>Grand Crinum Lily (Grand Crinum Lily)</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="Forest Ghost">
+    <div class="okkhoro">বন ভূত</div>
+    <p>Forest Ghost (Bon Bhoot)</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="Black Turmeric">
+    <div class="okkhoro">কালো হলুদ</div>
+    <p>Black Turmeric (Kalo Holud)</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="Foxtail Orchid">
+    <div class="okkhoro">ফক্সটেল অর্কিড</div>
+    <p>Foxtail Orchid (Foxtail Orchid)</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="Sweet Violet">
+    <div class="okkhoro">সুইট ভায়োলেট</div>
+    <p>Sweet Violet (Sweet Violet)</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="Night Blooming Jasmine">
+    <div class="okkhoro">নাইট ব্লুমিং জেসমিন</div>
+    <p>Night Blooming Jasmine (Night Blooming Jesmin)</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="Night Flowering Jasmine">
+    <div class="okkhoro">নাইট ফ্লাওয়ারিং জেসমিন</div>
+    <p>Night Flowering Jasmine (Night Flowering Jesmin)</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="Hiptage">
+    <div class="okkhoro">হিপটেজ</div>
+    <p>Hiptage (Hiptage)</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="Flax">
+    <div class="okkhoro">শণ</div>
+    <p>Flax (Shon)</p>
+</div>
+
+<div class="card" onclick="speak('')">
+    <img src="Aloe Vera Flower">
+    <div class="okkhoro">অ্যালোভেরা ফুল</div>
+    <p>Aloe Vera Flower (Aloe Vera Phool)</p>
+</div>
 
   </div>
 </section>

@@ -41,8 +41,8 @@ body{
 .tree:nth-child(4){right:450px;}
 @keyframes swayTree{from{transform:rotate(-2deg);}to{transform:rotate(2deg);}}
 .flower{position:absolute;bottom:20px;font-size:30px;animation:bloom 3s ease-in-out infinite alternate;}
-.flower:nth-child(5){left:100px;}
-.flower:nth-child(6){left:180px;}
+.flower:nth-child(5){left:700px;}
+.flower:nth-child(6){left:570px;}
 .flower:nth-child(7){left:260px;}
 @keyframes bloom{from{transform:scale(0.8);}to{transform:scale(1.2);}}
 
@@ -64,7 +64,7 @@ aside a:hover{background:linear-gradient(90deg,#fff099,#ffe066);color:#d35400;tr
 /* Main */
 main{margin-top:120px;margin-left:270px;padding:20px;width:calc(100% - 270px);min-height:100vh;z-index:1;}
 section{padding:15px;background:rgba(255,255,255,0.3);border-radius:14px;box-shadow:0 3px 8px rgba(0,0,0,0.1);margin-bottom:15px;}
-section h2{font-family:'Baloo Da 2',cursive;color:#e67e22;border-bottom:3px solid #ffcc33;display:inline-block;padding-bottom:5px;margin-bottom:10px;}
+section h1{font-family:'Baloo Da 2',cursive;color:#e67e22;border-bottom:3px solid #ffcc33;display:inline-block;padding-bottom:5px;margin-bottom:10px;}
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* সবসময় 2 কলাম */
@@ -73,29 +73,29 @@ section h2{font-family:'Baloo Da 2',cursive;color:#e67e22;border-bottom:3px soli
 .card {
   background:#fffbe6;
   border-radius:10px;
-  text-align:center;
+  text-align:left;
   padding:12px;
-  font-size:28px;
+  font-size:22px;
   font-family:'Baloo Da 2',cursive;
   color:#e67e22;
   box-shadow:0 2px 6px rgba(0,0,0,0.1);
   transition:0.3s;
-  height: 250px;
-  
-  display: flex;
-  flex-direction: column;
-  justify-content: center; /* মাঝখানে লাইন */
-  align-items: center;     /* horizontally centered */
-  line-height: 0px;
+  height: 300px;     /* horizontally centered */
+  line-height:normal;
+  color: #007bff;
+  padding-left: 40px;
+  padding-right: 40px;
 }
 .card:hover{transform:scale(1.08);background:#ffef99;}
 .toggleBtn{padding:10px 16px;margin:5px;font-size:17px;border:none;border-radius:8px;cursor:pointer;background:#ffdd99;transition:0.3s;}
 .toggleBtn.active{background:#ffcc33;color:#fff;}
 footer{text-align:center;padding:15px;font-size:14px;color:#555;margin-top:20px;}
 .okkhoro {
-  font-size: 140px;
-  line-height: 120px; /* কমিয়ে দিলাম */
-  margin-bottom: 5px; /* নিচের লেখার জন্য স্পেস */
+  font-size: 36px;
+  line-height: 50px; /* কমিয়ে দিলাম */
+  margin-bottom: 3px;
+  color: #20c100;
+  border-bottom:3px double #3347ff;
 }
 /* 🔊 Sound Button */
 #soundBtn{position:fixed;bottom:20px;right:20px;background:#fff3b0;border:2px solid #ffcc33;border-radius:8px;padding:8px 16px;font-size:16px;cursor:pointer;z-index:1100;}
@@ -210,7 +210,11 @@ footer{text-align:center;padding:15px;font-size:14px;color:#555;margin-top:20px;
 <a href="frut.html">ফলের পরিচয়</a>
 <a href="animl.html">পশুর পরিচয়</a>
 <a href="brd.html">পাখির পরিচয়</a>
+<a href="food.html">খাদ্যের পরিচয়</a>
+<a href="vegetable.html">শাঁক-সবজি পরিচয়</a>
+<a href="vehicle.html">যানবাহন পরিচয়</a>
 <a href="usetng.html">ব্যবহারিক জিনিস</a>
+<a href="bodypts.html">মানব অঙ্গ পরিচয়</a>
 <a href="clor.html">রঙ চেনা</a>
 <a href="relig.html">শাস্ত্র কথা</a>
 <a href="quiz.html">নিজে উত্তর দাও</a>
@@ -218,36 +222,93 @@ footer{text-align:center;padding:15px;font-size:14px;color:#555;margin-top:20px;
 
 <main>
 <section>
-  <h2>🌼 ইংরেজি বর্ণমালা</h2>
-  <p>ছোট্ট বন্ধুদের শিক্ষার আসর — ইংরেজি বর্ণমালা শেখা!</p>
+  <h1>🌼 ইংরেজি ছড়া</h1>
+  <p>ছোট্ট বন্ধুদের জন্য নিয়ে এসেছি ১0 টি মজার ছড়া — ইংরেজি ছড়া মন দিয়ে শোনো, আর আমার সাথে বলো </p>
   
   <div class="grid">
-    <div class="card" onclick="speak('A')"><div class="okkhoro">A</div><p>🍎 তে - Apple</p><p style="font-size: small;">Apple মানে - আপেল</p></div>
-    <div class="card" onclick="speak('B')"><div class="okkhoro">B</div><p>⚽ তে - Ball</p><p style="font-size: small;">Ball মানে - বল</p></div>
-    <div class="card" onclick="speak('C')"><div class="okkhoro">C</div><p>🐈 তে - Cat</p><p style="font-size: small;">Cat মানে - বিড়াল</p></div>
-    <div class="card" onclick="speak('D')"><div class="okkhoro">D</div><p>🐶 তে - Dog</p><p style="font-size: small;">Dog মানে - কুকুর</p></div>
-    <div class="card" onclick="speak('E')"><div class="okkhoro">E</div><p>🥚 তে - Egg</p><p style="font-size: small;">Egg মানে - ডিম</p></div>
-    <div class="card" onclick="speak('F')"><div class="okkhoro">F</div><p>🐟 তে - Fish</p><p style="font-size: small;">Fish মানে - মাছ</p></div>
-    <div class="card" onclick="speak('G')"><div class="okkhoro">G</div><p>🦒 তে - Giraffe</p><p style="font-size: small;">Giraffe মানে - জিরাফ</p></div>
-    <div class="card" onclick="speak('H')"><div class="okkhoro">H</div><p>🏠 তে - House</p><p style="font-size: small;">House মানে - ঘর</p></div>
-    <div class="card" onclick="speak('I')"><div class="okkhoro">I</div><p>🍦 তে - Ice-cream</p><p style="font-size: small;">Ice-cream মানে - আইসক্রিম</p></div>
-    <div class="card" onclick="speak('J')"><div class="okkhoro">J</div><p>🤹 তে - Joker</p><p style="font-size: small;">Joker মানে - ভাঁড়</p></div>
-    <div class="card" onclick="speak('K')"><div class="okkhoro">K</div><p>🦘 তে - Kangaroo</p><p style="font-size: small;">Kangaroo মানে - ক্যাঙ্গারু</p></div>
-    <div class="card" onclick="speak('L')"><div class="okkhoro">L</div><p>🦁 তে - Lion</p><p style="font-size: small;">Lion মানে - সিংহ</p></div>
-    <div class="card" onclick="speak('M')"><div class="okkhoro">M</div><p>🐒 তে - Monkey</p><p style="font-size: small;">Monkey মানে - বানর</p></div>
-    <div class="card" onclick="speak('N')"><div class="okkhoro">N</div><p>🐦 তে - Nest</p><p style="font-size: small;">Nest মানে - পাখির বাসা</p></div>
-    <div class="card" onclick="speak('O')"><div class="okkhoro">O</div><p>🐙 তে - Octopus</p><p style="font-size: small;">Octopus মানে - অক্টোপাস</p></div>
-    <div class="card" onclick="speak('P')"><div class="okkhoro">P</div><p>🦜 তে - Parrot</p><p style="font-size: small;">Parrot মানে - টিয়া পাখি</p></div>
-    <div class="card" onclick="speak('Q')"><div class="okkhoro">Q</div><p>👸 তে - Queen</p><p style="font-size: small;">Queen মানে - রাণী</p></div>
-    <div class="card" onclick="speak('R')"><div class="okkhoro">R</div><p>🐇 তে - Rabbit</p><p style="font-size: small;">Rabbit মানে - খরগোশ</p></div>
-    <div class="card" onclick="speak('S')"><div class="okkhoro">S</div><p>🐍 তে - Snake</p><p style="font-size: small;">Snake মানে - সাপ</p></div>
-    <div class="card" onclick="speak('T')"><div class="okkhoro">T</div><p>🐅 তে - Tiger</p><p style="font-size: small;">Tiger মানে - বাঘ</p></div>
-    <div class="card" onclick="speak('U')"><div class="okkhoro">U</div><p>☂️ তে - Umbrella</p><p style="font-size: small;">Umbrella মানে - ছাতা</p></div>
-    <div class="card" onclick="speak('V')"><div class="okkhoro">V</div><p>🎻 তে - Violin</p><p style="font-size: small;">Violin মানে - বেহালা</p></div>
-    <div class="card" onclick="speak('W')"><div class="okkhoro">W</div><p>🐺 তে - Wolf</p><p style="font-size: small;">Wolf মানে - নেকড়ে</p></div>
-    <div class="card" onclick="speak('X')"><div class="okkhoro">X</div><p>🎶 তে - Xylophone</p><p style="font-size: small;">Xylophone মানে - বাদ্যযন্ত্র</p></div>
-    <div class="card" onclick="speak('Y')"><div class="okkhoro">Y</div><p>🛥️ তে - Yacht</p><p style="font-size: small;">Yacht মানে - নৌকা</p></div>
-    <div class="card" onclick="speak('Z')"><div class="okkhoro">Z</div><p>🦓 তে - Zebra</p><p style="font-size: small;">Zebra মানে - জেব্রা</p></div>
+    <div class="card" onclick="speak('')">
+  <div class="okkhoro">Twinkle, Twinkle</div>
+  <p>Twinkle, twinkle, little star,<br>
+  How I wonder what you are!<br>
+  Up above the world so high,<br>
+  Like a diamond in the sky.</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">Baa, Baa, Black Sheep</div>
+  <p>Baa, baa, black sheep,<br>
+  Have you any wool?<br>
+  Yes, sir, yes, sir,<br>
+  Three bags full.</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">Humpty Dumpty</div>
+  <p>Humpty Dumpty sat on a wall,<br>
+  Humpty Dumpty had a great fall.<br>
+  All the king's horses and all the king's men<br>
+  Couldn't put Humpty together again.</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">Jack and Jill</div>
+  <p>Jack and Jill went up the hill<br>
+  To fetch a pail of water;<br>
+  Jack fell down and broke his crown,<br>
+  And Jill came tumbling after.</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">Mary Had a Little Lamb</div>
+  <p>Mary had a little lamb,<br>
+  Its fleece was white as snow;<br>
+  And everywhere that Mary went,<br>
+  The lamb was sure to go.</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">Row, Row, Row Your Boat</div>
+  <p>Row, row, row your boat,<br>
+  Gently down the stream.<br>
+  Merrily, merrily, merrily, merrily,<br>
+  Life is but a dream.</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">Hickory Dickory Dock</div>
+  <p>Hickory dickory dock,<br>
+  The mouse ran up the clock.<br>
+  The clock struck one,<br>
+  The mouse ran down,<br>
+  Hickory dickory dock.</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">Rain, Rain, Go Away</div>
+  <p>Rain, rain, go away,<br>
+  Come again another day.<br>
+  Little Johnny wants to play;<br>
+  Rain, rain, go away.</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">Itsy Bitsy Spider</div>
+  <p>The itsy bitsy spider<br>
+  Climbed up the waterspout.<br>
+  Down came the rain<br>
+  And washed the spider out.</p>
+</div>
+
+<div class="card" onclick="speak('')">
+  <div class="okkhoro">Hey Diddle Diddle</div>
+  <p>Hey diddle diddle,<br>
+  The cat and the fiddle,<br>
+  The cow jumped over the moon.<br>
+  The little dog laughed<br>
+  To see such sport,<br>
+  And the dish ran away with the spoon.</p>
+</div>
+
 
   </div>
 </section>

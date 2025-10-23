@@ -41,8 +41,8 @@ body{
 .tree:nth-child(4){right:450px;}
 @keyframes swayTree{from{transform:rotate(-2deg);}to{transform:rotate(2deg);}}
 .flower{position:absolute;bottom:20px;font-size:30px;animation:bloom 3s ease-in-out infinite alternate;}
-.flower:nth-child(5){left:100px;}
-.flower:nth-child(6){left:180px;}
+.flower:nth-child(5){left:700px;}
+.flower:nth-child(6){left:570px;}
 .flower:nth-child(7){left:260px;}
 @keyframes bloom{from{transform:scale(0.8);}to{transform:scale(1.2);}}
 
@@ -67,7 +67,7 @@ section{padding:15px;background:rgba(255,255,255,0.3);border-radius:14px;box-sha
 section h2{font-family:'Baloo Da 2',cursive;color:#e67e22;border-bottom:3px solid #ffcc33;display:inline-block;padding-bottom:5px;margin-bottom:10px;}
 .grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr); /* সবসময় 2 কলাম */
+  grid-template-columns: repeat(3, 1fr); /* সবসময় 2 কলাম */
   gap: 12px;
 }
 .card {
@@ -210,7 +210,11 @@ footer{text-align:center;padding:15px;font-size:14px;color:#555;margin-top:20px;
 <a href="frut.html">ফলের পরিচয়</a>
 <a href="animl.html">পশুর পরিচয়</a>
 <a href="brd.html">পাখির পরিচয়</a>
+<a href="food.html">খাদ্যের পরিচয়</a>
+<a href="vegetable.html">শাঁক-সবজি পরিচয়</a>
+<a href="vehicle.html">যানবাহন পরিচয়</a>
 <a href="usetng.html">ব্যবহারিক জিনিস</a>
+<a href="bodypts.html">মানব অঙ্গ পরিচয়</a>
 <a href="clor.html">রঙ চেনা</a>
 <a href="relig.html">শাস্ত্র কথা</a>
 <a href="quiz.html">নিজে উত্তর দাও</a>
@@ -218,37 +222,20 @@ footer{text-align:center;padding:15px;font-size:14px;color:#555;margin-top:20px;
 
 <main>
 <section>
-  <h2>🌼 ইংরেজি বর্ণমালা</h2>
-  <p>ছোট্ট বন্ধুদের শিক্ষার আসর — ইংরেজি বর্ণমালা শেখা!</p>
+  <h2>🌼 ইংরেজি সংখ্যা শেখা</h2>
+  <p>ছোট্ট বন্ধুদের শিক্ষার আসর — ইংরেজি সংখ্যা শেখা!</p>
   
   <div class="grid">
-    <div class="card" onclick="speak('A')"><div class="okkhoro">A</div><p>🍎 তে - Apple</p><p style="font-size: small;">Apple মানে - আপেল</p></div>
-    <div class="card" onclick="speak('B')"><div class="okkhoro">B</div><p>⚽ তে - Ball</p><p style="font-size: small;">Ball মানে - বল</p></div>
-    <div class="card" onclick="speak('C')"><div class="okkhoro">C</div><p>🐈 তে - Cat</p><p style="font-size: small;">Cat মানে - বিড়াল</p></div>
-    <div class="card" onclick="speak('D')"><div class="okkhoro">D</div><p>🐶 তে - Dog</p><p style="font-size: small;">Dog মানে - কুকুর</p></div>
-    <div class="card" onclick="speak('E')"><div class="okkhoro">E</div><p>🥚 তে - Egg</p><p style="font-size: small;">Egg মানে - ডিম</p></div>
-    <div class="card" onclick="speak('F')"><div class="okkhoro">F</div><p>🐟 তে - Fish</p><p style="font-size: small;">Fish মানে - মাছ</p></div>
-    <div class="card" onclick="speak('G')"><div class="okkhoro">G</div><p>🦒 তে - Giraffe</p><p style="font-size: small;">Giraffe মানে - জিরাফ</p></div>
-    <div class="card" onclick="speak('H')"><div class="okkhoro">H</div><p>🏠 তে - House</p><p style="font-size: small;">House মানে - ঘর</p></div>
-    <div class="card" onclick="speak('I')"><div class="okkhoro">I</div><p>🍦 তে - Ice-cream</p><p style="font-size: small;">Ice-cream মানে - আইসক্রিম</p></div>
-    <div class="card" onclick="speak('J')"><div class="okkhoro">J</div><p>🤹 তে - Joker</p><p style="font-size: small;">Joker মানে - ভাঁড়</p></div>
-    <div class="card" onclick="speak('K')"><div class="okkhoro">K</div><p>🦘 তে - Kangaroo</p><p style="font-size: small;">Kangaroo মানে - ক্যাঙ্গারু</p></div>
-    <div class="card" onclick="speak('L')"><div class="okkhoro">L</div><p>🦁 তে - Lion</p><p style="font-size: small;">Lion মানে - সিংহ</p></div>
-    <div class="card" onclick="speak('M')"><div class="okkhoro">M</div><p>🐒 তে - Monkey</p><p style="font-size: small;">Monkey মানে - বানর</p></div>
-    <div class="card" onclick="speak('N')"><div class="okkhoro">N</div><p>🐦 তে - Nest</p><p style="font-size: small;">Nest মানে - পাখির বাসা</p></div>
-    <div class="card" onclick="speak('O')"><div class="okkhoro">O</div><p>🐙 তে - Octopus</p><p style="font-size: small;">Octopus মানে - অক্টোপাস</p></div>
-    <div class="card" onclick="speak('P')"><div class="okkhoro">P</div><p>🦜 তে - Parrot</p><p style="font-size: small;">Parrot মানে - টিয়া পাখি</p></div>
-    <div class="card" onclick="speak('Q')"><div class="okkhoro">Q</div><p>👸 তে - Queen</p><p style="font-size: small;">Queen মানে - রাণী</p></div>
-    <div class="card" onclick="speak('R')"><div class="okkhoro">R</div><p>🐇 তে - Rabbit</p><p style="font-size: small;">Rabbit মানে - খরগোশ</p></div>
-    <div class="card" onclick="speak('S')"><div class="okkhoro">S</div><p>🐍 তে - Snake</p><p style="font-size: small;">Snake মানে - সাপ</p></div>
-    <div class="card" onclick="speak('T')"><div class="okkhoro">T</div><p>🐅 তে - Tiger</p><p style="font-size: small;">Tiger মানে - বাঘ</p></div>
-    <div class="card" onclick="speak('U')"><div class="okkhoro">U</div><p>☂️ তে - Umbrella</p><p style="font-size: small;">Umbrella মানে - ছাতা</p></div>
-    <div class="card" onclick="speak('V')"><div class="okkhoro">V</div><p>🎻 তে - Violin</p><p style="font-size: small;">Violin মানে - বেহালা</p></div>
-    <div class="card" onclick="speak('W')"><div class="okkhoro">W</div><p>🐺 তে - Wolf</p><p style="font-size: small;">Wolf মানে - নেকড়ে</p></div>
-    <div class="card" onclick="speak('X')"><div class="okkhoro">X</div><p>🎶 তে - Xylophone</p><p style="font-size: small;">Xylophone মানে - বাদ্যযন্ত্র</p></div>
-    <div class="card" onclick="speak('Y')"><div class="okkhoro">Y</div><p>🛥️ তে - Yacht</p><p style="font-size: small;">Yacht মানে - নৌকা</p></div>
-    <div class="card" onclick="speak('Z')"><div class="okkhoro">Z</div><p>🦓 তে - Zebra</p><p style="font-size: small;">Zebra মানে - জেব্রা</p></div>
-
+    <div class="card" onclick="speak('1')"><div class="okkhoro">1</div><p>☀️ One Sun</p><p style="font-size:small;">মানে - একটি সূর্য</p></div>
+    <div class="card" onclick="speak('2')"><div class="okkhoro">2</div><p>🐦 Two Birds</p><p style="font-size:small;">মানে - দুটি পাখি</p></div>
+    <div class="card" onclick="speak('3')"><div class="okkhoro">3</div><p>🍎 Three Apples</p><p style="font-size:small;">মানে - তিনটি আপেল</p></div>
+    <div class="card" onclick="speak('4')"><div class="okkhoro">4</div><p>🐠 Four Fish</p><p style="font-size:small;">মানে - চারটি মাছ</p></div>
+    <div class="card" onclick="speak('5')"><div class="okkhoro">5</div><p>🌸 Five Flowers</p><p style="font-size:small;">মানে - পাঁচটি ফুল</p></div>
+    <div class="card" onclick="speak('6')"><div class="okkhoro">6</div><p>🦋 Six Butterflies</p><p style="font-size:small;">মানে - ছয়টি প্রজাপতি</p></div>
+    <div class="card" onclick="speak('7')"><div class="okkhoro">7</div><p>🌈 Seven Colors</p><p style="font-size:small;">মানে - সাতটি রং</p></div>
+    <div class="card" onclick="speak('8')"><div class="okkhoro">8</div><p>🎈 Eight Balloons</p><p style="font-size:small;">মানে - আটটি বেলুন</p></div>
+    <div class="card" onclick="speak('9')"><div class="okkhoro">9</div><p>🐱 Nine Cats</p><p style="font-size:small;">মানে - নয়টি বিড়াল</p></div>
+    <div class="card" onclick="speak('10')"><div class="okkhoro">10</div><p>🎂 Ten Candles</p><p style="font-size:small;">মানে - দশটি মোমবাতি</p></div>
   </div>
 </section>
 

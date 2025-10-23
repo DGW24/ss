@@ -18,11 +18,11 @@ body {
 }
 
 /* 🌞 Sun */
-.sun{position:fixed;top:40px;right:80px;font-size:60px;animation:rotateSun 30s linear infinite;z-index:0;}
+.sun{position:fixed;top:60px;right:80px;font-size:80px;animation:rotateSun 30s linear infinite;z-index:0;}
 @keyframes rotateSun{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
 
 /* ☁️ Clouds */
-.cloud{position:fixed;font-size:50px;top:100px;left:-200px;opacity:0.7;animation:moveCloud 60s linear infinite;}
+.cloud{position:fixed;font-size:70px;top:100px;left:-200px;opacity:0.7;animation:moveCloud 60s linear infinite;}
 .cloud:nth-child(1){animation-delay:0s;}
 .cloud:nth-child(2){top:150px;animation-delay:20s;}
 .cloud:nth-child(3){top:200px;animation-delay:40s;}
@@ -32,20 +32,23 @@ body {
 .bird{position:fixed;font-size:30px;animation:flyBird 20s linear infinite;}
 .bird:nth-child(4){top:180px;left:-80px;animation-delay:0s;}
 .bird:nth-child(5){top:220px;left:-200px;animation-delay:10s;}
+.bird:nth-child(6){top:250px;right:-400px;animation-delay:20s;}
 @keyframes flyBird{0%{left:-100px;}50%{top:220px;}100%{left:110%;}}
 
 /* 🌳 Trees & Flowers */
 .ground{position:fixed;bottom:0;left:0;width:100%;height:200px;z-index:0;overflow:hidden;}
 .tree{position:absolute;bottom:40px;font-size:50px;animation:swayTree 4s ease-in-out infinite alternate;}
 .tree:nth-child(1){right:50px;}
-.tree:nth-child(2){right:150px;}
-.tree:nth-child(3){right:300px;}
+.tree:nth-child(2){right:180px;}
+.tree:nth-child(3){left:300px;}
 .tree:nth-child(4){right:450px;}
 @keyframes swayTree{from{transform:rotate(-2deg);}to{transform:rotate(2deg);}}
 .flower{position:absolute;bottom:20px;font-size:30px;animation:bloom 3s ease-in-out infinite alternate;}
 .flower:nth-child(5){left:100px;}
-.flower:nth-child(6){left:180px;}
-.flower:nth-child(7){left:260px;}
+.flower:nth-child(6){left:260px;}
+.flower:nth-child(7){left:580px;}
+.flower:nth-child(8){right:150px;}
+.flower:nth-child(9){right:260px;}
 @keyframes bloom{from{transform:scale(0.8);}to{transform:scale(1.2);}}
 
 /* 🐄 Cow */
@@ -66,7 +69,7 @@ aside a:hover{background:linear-gradient(90deg,#fff099,#ffe066);color:#d35400;tr
 main { margin-top:120px; margin-left:270px; padding:25px; width:calc(100%-270px); min-height:100vh; z-index:1; position:relative; }
 
 section { padding:30px; background:rgba(255, 255, 255, 0.288); border-radius:18px; box-shadow:0 4px 15px rgba(0, 0, 0, 0.155); margin-top: 10px;}
-section h2 { font-family:'Baloo Da 2', cursive; color:#e67e22; border-bottom:3px solid #ffcc33; display:inline-block; padding-bottom:5px; margin-bottom:15px; }
+section h1 { font-family:'Baloo Da 2', cursive; color:#e67e22; border-bottom:3px solid #ffcc33; display:inline-block; padding-bottom:5px; margin-bottom:15px; }
 .grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:15px; margin-top:20px;}
 .card { background:#fffbe6; border-radius:14px; text-align:center; padding:15px; font-size:34px; font-family:'Baloo Da 2', cursive; color:#e67e22; box-shadow:0 3px 8px rgba(0,0,0,0.1); transition:0.3s;}
 .card:hover { transform:scale(1.1); background:#ffef99; box-shadow:0 6px 14px rgba(0,0,0,0.15); }
@@ -165,21 +168,22 @@ footer { text-align:center; padding:20px; font-size:14px; color:#555; margin-top
 <div class="cloud">☁️</div>
 
 <!-- 🐦 Birds -->
+<div class="bird">🕊️</div>
 <div class="bird">🐦</div>
-<div class="bird">🐦</div>
+<div class="bird">🕊️</div>
 
 <!-- 🌳 Trees, 🌸 Flowers, 🐄 Cow -->
 <div class="ground">
   <div class="tree">🌳</div>
+  <div class="tree">🌲</div>
   <div class="tree">🌳</div>
-  <div class="tree">🌳</div>
-  <div class="tree">🌳</div>
+  <div class="tree">🌴</div>
   <div class="cow">🐄</div>
   <div class="flower">🌼</div>
+  <div class="flower">🌻</div>
   <div class="flower">🌼</div>
-  <div class="flower">🌼</div>
-  <div class="flower">🌼</div>
-  <div class="flower">🌼</div>
+  <div class="flower">🌻</div>
+  <div class="flower">🌻</div>
 </div>
 
 <header>🌸 শিশু শিক্ষা কেন্দ্র 🌸</header>
@@ -194,22 +198,26 @@ footer { text-align:center; padding:20px; font-size:14px; color:#555; margin-top
 <a href="borno.html">বর্ণপরিচয়</a>
 <a href="sonkha.html">সংখ্যা শেখা</a>
 <a href="abc.html">ইংরেজি বর্ণমালা</a>
-<a href="#">ইংরেজি সংখ্যা</a>
-<a href="#">বাংলা ছড়া</a>
-<a href="#">ইংরেজি ছড়া</a>
-<a href="#">ফুলের পরিচয়</a>
-<a href="#">ফলের পরিচয়</a>
-<a href="#">পশুর পরিচয়</a>
-<a href="#">পাখির পরিচয়</a>
-<a href="#">ব্যবহারিক জিনিস</a>
-<a href="#">রঙ চেনা</a>
-<a href="#">শাস্ত্র কথা</a>
-<a href="#">নিজে উত্তর দাও</a>
+<a href="e123.html">ইংরেজি সংখ্যা</a>
+<a href="bpoem.html">বাংলা ছড়া</a>
+<a href="engpoem.html">ইংরেজি ছড়া</a>
+<a href="flor.html">ফুলের পরিচয়</a>
+<a href="frut.html">ফলের পরিচয়</a>
+<a href="animl.html">পশুর পরিচয়</a>
+<a href="brd.html">পাখির পরিচয়</a>
+<a href="food.html">খাদ্যের পরিচয়</a>
+<a href="vegetable.html">শাঁক-সবজি পরিচয়</a>
+<a href="vehicle.html">যানবাহন পরিচয়</a>
+<a href="usetng.html">ব্যবহারিক জিনিস</a>
+<a href="bodypts.html">মানব অঙ্গ পরিচয়</a>
+<a href="clor.html">রঙ চেনা</a>
+<a href="relig.html">শাস্ত্র কথা</a>
+<a href="quiz.html">নিজে উত্তর দাও</a>
 </aside>
 
 <main>
 <section>
-<h2>🌼 স্বাগতম!</h2>
+<h1>🌼 স্বাগতম!</h1>
 <p>এটি শিশুদের জন্য একটি মজার শেখার ওয়েবসাইট। এখানে তুমি শিখবে অ আ ক খ, ১ ২ ৩, ফুল-ফল-পশু-পাখি, ছড়া এবং আরও অনেক কিছু!  
 বাম দিকের মেনু থেকে একটি বিষয় নির্বাচন করো এবং শেখা শুরু করো! 🌟</p>
 
