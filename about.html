@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>🌸 about শিশু শিক্ষা কেন্দ্র 🌸</title>
+<title>📚 শিশু শিক্ষা কেন্দ্র </title>
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600&family=Baloo+Da+2:wght@600&display=swap" rel="stylesheet">
 <style>
 * { box-sizing: border-box; scroll-behavior: smooth; }
@@ -18,87 +18,64 @@ body {
 }
 
 /* 🌞 Sun */
-.sun {
-  position: fixed;
-  top: 50px;
-  right: 80px;
-  font-size: 60px;
-  animation: rotateSun 30s linear infinite;
-  z-index: 0;
-}
-@keyframes rotateSun { from{transform:rotate(0deg);} to{transform:rotate(360deg);} }
+.sun{position:fixed;top:60px;right:80px;font-size:80px;animation:rotateSun 30s linear infinite;z-index:0;}
+@keyframes rotateSun{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
 
 /* ☁️ Clouds */
-.cloud {
-  position: fixed;
-  font-size: 50px;
-  top:100px;
-  left:-200px;
-  opacity:0.7;
-  animation: moveCloud 60s linear infinite;
-}
-.cloud:nth-child(1){ top:100px; animation-delay:0s;}
-.cloud:nth-child(2){ top:150px; animation-delay:20s;}
-.cloud:nth-child(3){ top:200px; animation-delay:40s;}
-@keyframes moveCloud { from{left:-200px;} to{left:110%;} }
+.cloud{position:fixed;font-size:70px;top:100px;left:-200px;opacity:0.7;animation:moveCloud 60s linear infinite;}
+.cloud:nth-child(1){animation-delay:0s;}
+.cloud:nth-child(2){top:150px;animation-delay:20s;}
+.cloud:nth-child(3){top:200px;animation-delay:40s;}
+@keyframes moveCloud{from{left:-200px;}to{left:110%;}}
 
-/* 🐦 Birds flying */
-.bird {
-  position: fixed;
-  font-size: 30px;
-  animation: flyBird 20s linear infinite;
-}
-.bird:nth-child(4){ top:180px; left:-80px; animation-delay:0s; }
-.bird:nth-child(5){ top:220px; left:-200px; animation-delay:10s; }
-@keyframes flyBird {
-  0% { left:-100px; transform: scaleX(1);}
-  50% { top:220px;}
-  100% { left:110%; transform: scaleX(1);}
-}
+/* 🐦 Birds */
+.bird{position:fixed;font-size:30px;animation:flyBird 20s linear infinite;}
+.bird:nth-child(4){top:180px;left:-80px;animation-delay:0s;}
+.bird:nth-child(5){top:220px;left:-200px;animation-delay:10s;}
+.bird:nth-child(6){top:250px;right:-400px;animation-delay:20s;}
+@keyframes flyBird{0%{left:-100px;}50%{top:220px;}100%{left:110%;}}
 
-/* 🌳 Trees */
-.ground { position: fixed; bottom:0; left:0; width:100%; height:200px; z-index:0; overflow:hidden; }
-.tree { position:absolute; bottom:40px; font-size:50px; animation:swayTree 4s ease-in-out infinite alternate; }
-.tree:nth-child(1){ right:50px; animation-delay:0s; }
-.tree:nth-child(2){ right:150px; animation-delay:1s; }
-.tree:nth-child(3){ right:300px; animation-delay:0.5s; }
-.tree:nth-child(4){ right:450px; animation-delay:1.2s; }
-@keyframes swayTree { from{transform:rotate(-2deg);} to{transform:rotate(2deg);} }
-
-/* 🌸 Flowers */
-.flower { position:absolute; bottom:20px; font-size:30px; animation:bloom 3s ease-in-out infinite alternate; }
-.flower:nth-child(1){ right:80px; animation-delay:0s; }
-.flower:nth-child(2){ right:140px; animation-delay:0.5s; }
-.flower:nth-child(3){ left:200px; animation-delay:1s; }
-.flower:nth-child(4){ left:260px; animation-delay:1.2s; }
-@keyframes bloom { from{transform:scale(0.8);} to{transform:scale(1.2);} }
+/* 🌳 Trees & Flowers */
+.ground{position:fixed;bottom:0;left:0;width:100%;height:200px;z-index:0;overflow:hidden;}
+.tree{position:absolute;bottom:40px;font-size:80px;animation:swayTree 4s ease-in-out infinite alternate;}
+.tree:nth-child(1){right:50px;}
+.tree:nth-child(2){right:180px;}
+.tree:nth-child(3){left:300px;}
+.tree:nth-child(4){right:450px;}
+@keyframes swayTree{from{transform:rotate(-2deg);}to{transform:rotate(2deg);}}
+.flower{position:absolute;bottom:20px;font-size:30px;animation:bloom 3s ease-in-out infinite alternate;}
+.flower:nth-child(5){left:100px;}
+.flower:nth-child(6){left:260px;}
+.flower:nth-child(7){left:580px;}
+.flower:nth-child(8){right:150px;}
+.flower:nth-child(9){right:260px;}
+@keyframes bloom{from{transform:scale(0.8);}to{transform:scale(1.2);}}
 
 /* 🐄 Cow */
-.cow { position:absolute; bottom:50px; left:200px; font-size:50px; animation:cowMove 40s linear infinite; }
-@keyframes cowMove { 0%{left:-150px;} 50%{left:60%;} 100%{left:-150px;} }
+.cow{position:absolute;bottom:50px;left:-100px;font-size:50px;animation:cowMove 40s linear infinite;}
+@keyframes cowMove{0%{left:-150px;}50%{left:60%;}100%{left:-150px;}}
 
 /* Header & Layout */
-header { position:fixed; top:0; left:0; width:100%; background:linear-gradient(90deg,#ffa751,#ffe259); padding:10px 0; text-align:center; color:white; font-family:'Baloo Da 2', cursive; font-size:30px; text-shadow:1px 2px 3px rgba(0,0,0,0.2); z-index:1000; }
+header { position:fixed; top:0; left:0; width:100%; background:linear-gradient(90deg,#fcffd0,#fe003b,#fcffd0); padding:5px 0; text-align:center; color:white; font-family:'Baloo Da 2', cursive; font-size:36px; text-shadow:1px 2px 3px rgba(52, 1, 81, 0.929); z-index:1000; }
 nav.top { position:fixed; top:64px; left:0; width:100%; background:#ffedb318; display:flex; justify-content:center; gap:20px; padding:10px 0; z-index:999; line-height: 20px;}
-nav.top a { color:#333; text-decoration:none; font-weight:600; font-size:18px; transition:0.3s;}
-nav.top a:hover { color:#e67e22; }
+nav.top a { color:#002fff; text-decoration:none; font-weight:600; font-weight: bold; font-size:18px; transition:0.3s;}
+nav.top a:hover { background-color:#07de00; padding: 5px; border-radius: 8px; color: #ffffff;}
 
-aside { position:fixed; top:120px; left:0; width:250px; background:rgba(255, 255, 204, 0); height:calc(100%-120px); overflow-y:auto; padding:10px 14px; z-index:900; }
-aside a { display:block; color:#444; background:#fffbe6; padding:12px 14px; margin:8px 0; text-decoration:none; border-radius:10px; font-weight:500; transition:0.3s; }
-aside a:hover { background:linear-gradient(90deg,#fff099,#ffe066); color:#d35400; transform:translateX(5px); }
+/* Sidebar */
+aside{position:fixed;top:120px;left:0;width:250px;background:transparent;height:calc(100% - 120px);overflow-y:auto;padding:10px 14px;z-index:900;}
+aside a{font-size: 20px;display:block;color:#ffff00;background:linear-gradient(90deg,#0082d3,#f72a97);text-shadow: 0 2px 4px #424141;padding:10px 14px;margin:8px 0;text-decoration:none;border-radius:10px;font-weight:800;transition:0.3s;}
+aside a:hover{background:linear-gradient(90deg,#12b500,#edff4f);color:#ffffff;transform:translateX(5px);}
 
 main { margin-top:120px; margin-left:270px; padding:25px; width:calc(100%-270px); min-height:100vh; z-index:1; position:relative; }
 
-section { padding:30px; background:rgba(255, 255, 255, 0.288); border-radius:18px; box-shadow:0 4px 15px rgba(0, 0, 0, 0.155); margin-top: 10px;}
-section h2 { font-family:'Baloo Da 2', cursive; color:#e67e22; border-bottom:3px solid #ffcc33; display:inline-block; padding-bottom:5px; margin-bottom:15px; }
-.grid { display:grid; grid-template-columns:repeat(auto-fill,minmax(120px,1fr)); gap:15px; margin-top:20px;}
-.card { background:#fffbe6; border-radius:14px; text-align:center; padding:15px; font-size:34px; font-family:'Baloo Da 2', cursive; color:#e67e22; box-shadow:0 3px 8px rgba(0,0,0,0.1); transition:0.3s;}
-.card:hover { transform:scale(1.1); background:#ffef99; box-shadow:0 6px 14px rgba(0,0,0,0.15); }
+section { padding:30px; background:rgba(156, 245, 255, 0.491); border-radius:18px; box-shadow:0 4px 15px rgba(0, 0, 0, 0.155); margin-top: 10px;}
+section h1 { text-shadow: 0 0 4px #f8ff97;font-family:'Baloo Da 2', cursive; color:#0ba700; border-bottom:3px solid #3355ff; display:inline-block; padding-bottom:5px; margin-bottom:15px; }
+section h2 { text-shadow: 1px 2px 4px #ffffff;font-family:'Baloo Da 2', cursive; color:#022cff; display:inline-block; padding-bottom:5px; margin-bottom:15px; }
 
 footer { text-align:center; padding:20px; font-size:14px; color:#555; margin-top:30px; }
 
-/* 🔊 Music Button */
-#soundBtn { align-items:start; top:10px; right:10px; z-index:1100; padding:8px 14px;  border:none;  cursor:pointer; font-size:16px; }
+/* 🔊 Sound Button */
+#soundBtn{position:fixed;bottom:20px;right:20px;background:#fff3b0;border:2px solid #ffcc33;border-radius:8px;padding:8px 16px;font-size:16px;cursor:pointer;z-index:1100;}
 /* 📱 Mobile Responsive Design */
 @media (max-width: 768px) {
 
@@ -153,10 +130,9 @@ footer { text-align:center; padding:20px; font-size:14px; color:#555; margin-top
   }
 
   .grid {
-  display: grid;
-  grid-template-columns: repeat(1, 1fr); /* সবসময় 2 কলাম */
-  gap: 12px;
-}
+    grid-template-columns: repeat(auto-fill, minmax(80px, 1fr));
+    gap: 10px;
+  }
 
   .card {
     font-size: 26px;
@@ -173,9 +149,10 @@ footer { text-align:center; padding:20px; font-size:14px; color:#555; margin-top
   /* 🌳 ছোট স্ক্রিনে ব্যাকগ্রাউন্ড এলিমেন্ট গুলো হালকা রাখো */
   .tree, .flower, .cow, .cloud, .sun, .bird {
     opacity: 0.5;
-    font-size: smaller;
+    font-size: medium;
   }
 }
+
 
 </style>
 </head>
@@ -190,24 +167,25 @@ footer { text-align:center; padding:20px; font-size:14px; color:#555; margin-top
 <div class="cloud">☁️</div>
 
 <!-- 🐦 Birds -->
+<div class="bird">🕊️</div>
 <div class="bird">🐦</div>
-<div class="bird">🐦</div>
+<div class="bird">🕊️</div>
 
 <!-- 🌳 Trees, 🌸 Flowers, 🐄 Cow -->
 <div class="ground">
   <div class="tree">🌳</div>
+  <div class="tree">🌲</div>
   <div class="tree">🌳</div>
-  <div class="tree">🌳</div>
-  <div class="tree">🌳</div>
+  <div class="tree">🌴</div>
   <div class="cow">🐄</div>
   <div class="flower">🌼</div>
+  <div class="flower">🌻</div>
   <div class="flower">🌼</div>
-  <div class="flower">🌼</div>
-  <div class="flower">🌼</div>
-  <div class="flower">🌼</div>
+  <div class="flower">🌻</div>
+  <div class="flower">🌻</div>
 </div>
 
-<header>🌸 শিশু শিক্ষা কেন্দ্র 🌸</header>
+<header>📚 শিশু শিক্ষা কেন্দ্র 📚</header>
 
 <nav class="top">
 <a href="index.html">🏠 হোম</a>
@@ -226,7 +204,11 @@ footer { text-align:center; padding:20px; font-size:14px; color:#555; margin-top
 <a href="frut.html">ফলের পরিচয়</a>
 <a href="animl.html">পশুর পরিচয়</a>
 <a href="brd.html">পাখির পরিচয়</a>
+<a href="food.html">খাদ্যের পরিচয়</a>
+<a href="vegetable.html">শাঁক-সবজি পরিচয়</a>
+<a href="vehicle.html">যানবাহন পরিচয়</a>
 <a href="usetng.html">ব্যবহারিক জিনিস</a>
+<a href="bodypts.html">মানব অঙ্গ পরিচয়</a>
 <a href="clor.html">রঙ চেনা</a>
 <a href="relig.html">শাস্ত্র কথা</a>
 <a href="quiz.html">নিজে উত্তর দাও</a>
@@ -234,9 +216,9 @@ footer { text-align:center; padding:20px; font-size:14px; color:#555; margin-top
 
 <main>
 <section>
-<h2>🌼 আমাদের সম্পর্কে</h2>
-        <p>এই ওয়েবসাইটটি বাচ্চাদের জন্য সহজ ও মজাদার উপায়ে বাংলা এবং ইংরেজি ভাষা ও অন্যান্য প্রাথমিক শিক্ষা দেওয়ার জন্য তৈরি করা হয়েছে। আমাদের লক্ষ্য হলো খেলার ছলে শিক্ষা প্রদান করা।</p>
-        <p>আমরা বিশ্বাস করি, শৈশবের শিক্ষা আনন্দময় হওয়া উচিত।</p>
+<h1>📝 আমাদের সম্পর্কে</h1>
+        <p style="font-size: 20px; color: #002bec;">এই ওয়েবসাইটটি বাচ্চাদের জন্য সহজ ও মজাদার উপায়ে বাংলা এবং ইংরেজি ভাষা ও অন্যান্য প্রাথমিক শিক্ষা দেওয়ার জন্য তৈরি করা হয়েছে। আমাদের লক্ষ্য হলো খেলার ছলে শিক্ষা প্রদান করা।</p>
+        <p style="font-size: 20px; color: #002bec;">আমরা বিশ্বাস করি, শৈশবের শিক্ষা আনন্দময় হওয়া উচিত।</p>
 </section>
 
 

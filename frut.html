@@ -3,24 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>🌸 শিশু শিক্ষা কেন্দ্র 🌸</title>
+<title>📚 শিশু শিক্ষা কেন্দ্র </title>
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600&family=Baloo+Da+2:wght@600&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;scroll-behavior:smooth;}
-body{
-  font-family:'Hind Siliguri',sans-serif;
+* { box-sizing: border-box; scroll-behavior: smooth; }
+
+body {
+  font-family: 'Hind Siliguri', sans-serif;
   margin:0;
   display:flex;
-  background:linear-gradient(to top,#b3ffb3 0%,#ccf2ff 60%,#ffffff 100%);
+  background: linear-gradient(to top, #b3ffb3 0%, #ccf2ff 60%, #ffffff 100%);
   overflow-x:hidden;
   position:relative;
 }
+
 /* 🌞 Sun */
-.sun{position:fixed;top:40px;right:80px;font-size:60px;animation:rotateSun 30s linear infinite;z-index:0;}
+.sun{position:fixed;top:60px;right:80px;font-size:80px;animation:rotateSun 30s linear infinite;z-index:0;}
 @keyframes rotateSun{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
 
 /* ☁️ Clouds */
-.cloud{position:fixed;font-size:50px;top:100px;left:-200px;opacity:0.7;animation:moveCloud 60s linear infinite;}
+.cloud{position:fixed;font-size:70px;top:100px;left:-200px;opacity:0.7;animation:moveCloud 60s linear infinite;}
 .cloud:nth-child(1){animation-delay:0s;}
 .cloud:nth-child(2){top:150px;animation-delay:20s;}
 .cloud:nth-child(3){top:200px;animation-delay:40s;}
@@ -30,36 +32,39 @@ body{
 .bird{position:fixed;font-size:30px;animation:flyBird 20s linear infinite;}
 .bird:nth-child(4){top:180px;left:-80px;animation-delay:0s;}
 .bird:nth-child(5){top:220px;left:-200px;animation-delay:10s;}
+.bird:nth-child(6){top:250px;right:-400px;animation-delay:20s;}
 @keyframes flyBird{0%{left:-100px;}50%{top:220px;}100%{left:110%;}}
 
 /* 🌳 Trees & Flowers */
 .ground{position:fixed;bottom:0;left:0;width:100%;height:200px;z-index:0;overflow:hidden;}
-.tree{position:absolute;bottom:40px;font-size:50px;animation:swayTree 4s ease-in-out infinite alternate;}
+.tree{position:absolute;bottom:40px;font-size:80px;animation:swayTree 4s ease-in-out infinite alternate;}
 .tree:nth-child(1){right:50px;}
-.tree:nth-child(2){right:150px;}
-.tree:nth-child(3){right:300px;}
+.tree:nth-child(2){right:180px;}
+.tree:nth-child(3){left:300px;}
 .tree:nth-child(4){right:450px;}
 @keyframes swayTree{from{transform:rotate(-2deg);}to{transform:rotate(2deg);}}
 .flower{position:absolute;bottom:20px;font-size:30px;animation:bloom 3s ease-in-out infinite alternate;}
-.flower:nth-child(5){left:700px;}
-.flower:nth-child(6){left:570px;}
-.flower:nth-child(7){left:260px;}
+.flower:nth-child(5){left:100px;}
+.flower:nth-child(6){left:260px;}
+.flower:nth-child(7){left:580px;}
+.flower:nth-child(8){right:150px;}
+.flower:nth-child(9){right:260px;}
 @keyframes bloom{from{transform:scale(0.8);}to{transform:scale(1.2);}}
 
 /* 🐄 Cow */
 .cow{position:absolute;bottom:50px;left:-100px;font-size:50px;animation:cowMove 40s linear infinite;}
 @keyframes cowMove{0%{left:-150px;}50%{left:60%;}100%{left:-150px;}}
 
-/* Header & Nav */
-header{position:fixed;top:0;left:0;width:100%;background:linear-gradient(90deg,#ffa751,#ffe259);padding:10px 0;text-align:center;color:white;font-family:'Baloo Da 2',cursive;font-size:30px;text-shadow:1px 2px 3px rgba(0,0,0,0.2);z-index:1000;}
-nav.top{position:fixed;top:64px;left:0;width:100%;background:#fff8d8b8;display:flex;justify-content:center;gap:25px;padding:10px 0;z-index:999;}
-nav.top a{color:#333;text-decoration:none;font-weight:600;font-size:18px;transition:0.3s;}
-nav.top a:hover{color:#e67e22;}
+/* Header & Layout */
+header { position:fixed; top:0; left:0; width:100%; background:linear-gradient(90deg,#fcffd0,#fe003b,#fcffd0); padding:5px 0; text-align:center; color:white; font-family:'Baloo Da 2', cursive; font-size:36px; text-shadow:1px 2px 3px rgba(52, 1, 81, 0.929); z-index:1000; }
+nav.top { position:fixed; top:64px; left:0; width:100%; background:#ffedb318; display:flex; justify-content:center; gap:20px; padding:10px 0; z-index:999; line-height: 20px;}
+nav.top a { color:#002fff; text-decoration:none; font-weight:600; font-weight: bold; font-size:18px; transition:0.3s;}
+nav.top a:hover { background-color:#07de00; padding: 5px; border-radius: 8px; color: #ffffff;}
 
 /* Sidebar */
 aside{position:fixed;top:120px;left:0;width:250px;background:transparent;height:calc(100% - 120px);overflow-y:auto;padding:10px 14px;z-index:900;}
-aside a{display:block;color:#444;background:#fffbe6;padding:10px 14px;margin:8px 0;text-decoration:none;border-radius:10px;font-weight:500;transition:0.3s;}
-aside a:hover{background:linear-gradient(90deg,#fff099,#ffe066);color:#d35400;transform:translateX(5px);}
+aside a{font-size: 20px;display:block;color:#ffff00;background:linear-gradient(90deg,#0082d3,#f72a97);text-shadow: 0 2px 4px #424141;padding:10px 14px;margin:8px 0;text-decoration:none;border-radius:10px;font-weight:800;transition:0.3s;}
+aside a:hover{background:linear-gradient(90deg,#12b500,#edff4f);color:#ffffff;transform:translateX(5px);}
 
 /* Main */
 main{margin-top:120px;margin-left:270px;padding:20px;width:calc(100% - 270px);min-height:100vh;z-index:1;}
@@ -81,27 +86,30 @@ section h1{font-family:'Baloo Da 2',cursive;color:#e67e22;border-bottom:3px soli
   box-shadow:0 2px 6px rgba(0,0,0,0.1);
   transition:0.3s;
   height: 300px;     /* horizontally centered */
-  line-height:normal;
+  line-height:0px;
   color: #007bff;
-  padding-left: 40px;
-  padding-right: 40px;
+  padding-left: 20px;
+  padding-right: 20px;
 }
-.card:hover{transform:scale(1.08);background:#ffef99;}
-.toggleBtn{padding:10px 16px;margin:5px;font-size:17px;border:none;border-radius:8px;cursor:pointer;background:#ffdd99;transition:0.3s;}
-.toggleBtn.active{background:#ffcc33;color:#fff;}
-footer{text-align:center;padding:15px;font-size:14px;color:#555;margin-top:20px;}
+.card:hover{transform:scale(1.08);background:#76f9ee;color: #ff0000;}
 .okkhoro {
-  font-size: 36px;
-  line-height: 30px; 
+  font-size: 32px;
+  line-height: 50px; 
   margin-bottom: 1px;
   color: #20c100;
-  
+  text-shadow: 
+     -2px -2px 0 #fff,
+   2px -2px 0 #fff,
+  -2px  2px 0 #fff,
+   2px  2px 0 #fff;
 }
 img {
-  width: 200px;
-  height: 150px;
+  width: 250px;
+  height: 180px;
   border-radius: 10px;
 }
+
+footer { text-align:center; padding:20px; font-size:14px; color:#555; margin-top:30px; }
 /* 🔊 Sound Button */
 #soundBtn{position:fixed;bottom:20px;right:20px;background:#fff3b0;border:2px solid #ffcc33;border-radius:8px;padding:8px 16px;font-size:16px;cursor:pointer;z-index:1100;}
 /* 📱 Mobile Responsive Design */
@@ -185,18 +193,34 @@ img {
 </style>
 </head>
 <body>
-
-<!-- Animations -->
+<!-- 🌞 Sun -->
 <div class="sun">🌞</div>
-<div class="cloud">☁️</div><div class="cloud">☁️</div><div class="cloud">☁️</div>
-<div class="bird">🐦</div><div class="bird">🐦</div>
+
+<!-- ☁️ Clouds -->
+<div class="cloud">☁️</div>
+<div class="cloud">☁️</div>
+<div class="cloud">☁️</div>
+
+<!-- 🐦 Birds -->
+<div class="bird">🕊️</div>
+<div class="bird">🐦</div>
+<div class="bird">🕊️</div>
+
+<!-- 🌳 Trees, 🌸 Flowers, 🐄 Cow -->
 <div class="ground">
-  <div class="tree">🌳</div><div class="tree">🌳</div><div class="tree">🌳</div><div class="tree">🌳</div>
+  <div class="tree">🌳</div>
+  <div class="tree">🌲</div>
+  <div class="tree">🌳</div>
+  <div class="tree">🌴</div>
   <div class="cow">🐄</div>
-  <div class="flower">🌼</div><div class="flower">🌼</div><div class="flower">🌼</div>
+  <div class="flower">🌼</div>
+  <div class="flower">🌻</div>
+  <div class="flower">🌼</div>
+  <div class="flower">🌻</div>
+  <div class="flower">🌻</div>
 </div>
 
-<header>🌸 শিশু শিক্ষা কেন্দ্র 🌸</header>
+<header>📚 শিশু শিক্ষা কেন্দ্র 📚</header>
 
 <nav class="top">
 <a href="index.html">🏠 হোম</a>
@@ -227,126 +251,126 @@ img {
 
 <main>
 <section>
-  <h1>🌼 ফলের পরিচয়</h1>
-  <p>ছোট্ট বন্ধুদের জন্য নিয়ে এসেছি ২০ টি মজার ফলের পরিচয়। মন দিয়ে শোনো, আর আমার সাথে বলো </p>
+  <h1>📝  ফলের পরিচয়  🍎</h1>
+  <p style="font-size: 20px; color: #002bec;">ছোট্ট বন্ধুদের জন্য নিয়ে এসেছি ২০ টি মজার ফলের পরিচয়। মন দিয়ে শোনো, আর আমার সাথে বলো </p>
   
   <div class="grid">
   <div class="card" onclick="speak('')">
-    <img src="Fruit/1.webp">
+    <img src="Fruit-1.webp">
     <div class="okkhoro">আপেল</div>
     <p>Apple</p>
 </div>
 
 <div class="card" onclick="speak('')">
-    <img src="Fruit/2.webp">
+    <img src="Fruit-2.webp">
     <div class="okkhoro">কলা</div>
     <p>Banana</p>
 </div>
 
 <div class="card" onclick="speak('')">
-    <img src="Fruit/3.webp">
+    <img src="Fruit-3.webp">
     <div class="okkhoro">কমলা</div>
     <p>Orange</p>
 </div>
 
 <div class="card" onclick="speak('')">
-    <img src="Fruit/4.webp">
+    <img src="Fruit-4.webp">
     <div class="okkhoro">স্ট্রবেরি</div>
     <p>Strawberry</p>
 </div>
 
 <div class="card" onclick="speak('')">
-    <img src="Fruit/5.webp">
+    <img src="Fruit-5.webp">
     <div class="okkhoro">ব্লুবেরি</div>
     <p>Blueberry</p>
 </div>
 
 <div class="card" onclick="speak('')">
-    <img src="Fruit/6.webp">
+    <img src="Fruit-6.webp">
     <div class="okkhoro">আম</div>
     <p>Mango</p>
 </div>
 
 <div class="card" onclick="speak('')">
-    <img src="Fruit/7.webp">
+    <img src="Fruit-7.webp">
     <div class="okkhoro">আনারস</div>
     <p>Pineapple</p>
 </div>
 
 <div class="card" onclick="speak('')">
-    <img src="Fruit/8.webp">
+    <img src="Fruit-8.webp">
     <div class="okkhoro">তরমুজ</div>
     <p>Watermelon</p>
 </div>
 
 <div class="card" onclick="speak('')">
-    <img src="Fruit/9.webp">
+    <img src="Fruit-9.webp">
     <div class="okkhoro">আঙ্গুর</div>
     <p>Grape</p>
 </div>
 
 <div class="card" onclick="speak('')">
-    <img src="Fruit/10.webp">
+    <img src="Fruit-10.webp">
     <div class="okkhoro">কিউই</div>
     <p>Kiwi</p>
 </div>
 
 <div class="card" onclick="speak('')">
-    <img src="Fruit/11.webp">
+    <img src="Fruit-11.webp">
     <div class="okkhoro">পেঁপে</div>
     <p>Papaya</p>
 </div>
 
 <div class="card" onclick="speak('')">
-    <img src="Fruit/12.webp">
+    <img src="Fruit-12.webp">
     <div class="okkhoro">পীচ</div>
     <p>Peach</p>
 </div>
 
 <div class="card" onclick="speak('')">
-    <img src="Fruit/13.webp">
+    <img src="Fruit-13.webp">
     <div class="okkhoro">নাশপাতি</div>
     <p>Pear</p>
 </div>
 
 <div class="card" onclick="speak('')">
-    <img src="Fruit/14.webp">
+    <img src="Fruit-14.webp">
     <div class="okkhoro">চেরি</div>
     <p>Cherry</p>
 </div>
 
 <div class="card" onclick="speak('')">
-    <img src="Fruit/15.webp">
+    <img src="Fruit-15.webp">
     <div class="okkhoro">রাস্পবেরি</div>
     <p>Raspberry</p>
 </div>
 
 <div class="card" onclick="speak('')">
-    <img src="Fruit/16.webp">
+    <img src="Fruit-16.webp">
     <div class="okkhoro">লেবু</div>
     <p>Lemon</p>
 </div>
 
 <div class="card" onclick="speak('')">
-    <img src="Fruit/17.webp">
+    <img src="Fruit-17.webp">
     <div class="okkhoro">অ্যাভোকাডো</div>
     <p>Avocado</p>
 </div>
 
 <div class="card" onclick="speak('')">
-    <img src="Fruit/18.webp">
+    <img src="Fruit-18.webp">
     <div class="okkhoro">বরই</div>
     <p>Plum</p>
 </div>
 
 <div class="card" onclick="speak('')">
-    <img src="Fruit/19.webp">
+    <img src="Fruit-19.webp">
     <div class="okkhoro">ক্র্যানবেরি</div>
     <p>Cranberry</p>
 </div>
 
 <div class="card" onclick="speak('')">
-    <img src="Fruit/20.webp">
+    <img src="Fruit-20.webp">
     <div class="okkhoro">ডুমুর</div>
     <p>Fig</p>
 </div>

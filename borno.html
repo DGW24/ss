@@ -3,24 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>🌸 শিশু শিক্ষা কেন্দ্র 🌸</title>
+<title>📚 শিশু শিক্ষা কেন্দ্র </title>
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600&family=Baloo+Da+2:wght@600&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;scroll-behavior:smooth;}
-body{
-  font-family:'Hind Siliguri',sans-serif;
+* { box-sizing: border-box; scroll-behavior: smooth; }
+
+body {
+  font-family: 'Hind Siliguri', sans-serif;
   margin:0;
   display:flex;
-  background:linear-gradient(to top,#b3ffb3 0%,#ccf2ff 60%,#ffffff 100%);
+  background: linear-gradient(to top, #b3ffb3 0%, #ccf2ff 60%, #ffffff 100%);
   overflow-x:hidden;
   position:relative;
 }
+
 /* 🌞 Sun */
-.sun{position:fixed;top:40px;right:80px;font-size:60px;animation:rotateSun 30s linear infinite;z-index:0;}
+.sun{position:fixed;top:60px;right:80px;font-size:80px;animation:rotateSun 30s linear infinite;z-index:0;}
 @keyframes rotateSun{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
 
 /* ☁️ Clouds */
-.cloud{position:fixed;font-size:50px;top:100px;left:-200px;opacity:0.7;animation:moveCloud 60s linear infinite;}
+.cloud{position:fixed;font-size:70px;top:100px;left:-200px;opacity:0.7;animation:moveCloud 60s linear infinite;}
 .cloud:nth-child(1){animation-delay:0s;}
 .cloud:nth-child(2){top:150px;animation-delay:20s;}
 .cloud:nth-child(3){top:200px;animation-delay:40s;}
@@ -30,54 +32,58 @@ body{
 .bird{position:fixed;font-size:30px;animation:flyBird 20s linear infinite;}
 .bird:nth-child(4){top:180px;left:-80px;animation-delay:0s;}
 .bird:nth-child(5){top:220px;left:-200px;animation-delay:10s;}
+.bird:nth-child(6){top:250px;right:-400px;animation-delay:20s;}
 @keyframes flyBird{0%{left:-100px;}50%{top:220px;}100%{left:110%;}}
 
 /* 🌳 Trees & Flowers */
 .ground{position:fixed;bottom:0;left:0;width:100%;height:200px;z-index:0;overflow:hidden;}
-.tree{position:absolute;bottom:40px;font-size:50px;animation:swayTree 4s ease-in-out infinite alternate;}
+.tree{position:absolute;bottom:40px;font-size:80px;animation:swayTree 4s ease-in-out infinite alternate;}
 .tree:nth-child(1){right:50px;}
-.tree:nth-child(2){right:150px;}
-.tree:nth-child(3){right:300px;}
+.tree:nth-child(2){right:180px;}
+.tree:nth-child(3){left:300px;}
 .tree:nth-child(4){right:450px;}
 @keyframes swayTree{from{transform:rotate(-2deg);}to{transform:rotate(2deg);}}
 .flower{position:absolute;bottom:20px;font-size:30px;animation:bloom 3s ease-in-out infinite alternate;}
 .flower:nth-child(5){left:100px;}
-.flower:nth-child(6){left:180px;}
-.flower:nth-child(7){left:260px;}
+.flower:nth-child(6){left:260px;}
+.flower:nth-child(7){left:580px;}
+.flower:nth-child(8){right:150px;}
+.flower:nth-child(9){right:260px;}
 @keyframes bloom{from{transform:scale(0.8);}to{transform:scale(1.2);}}
 
 /* 🐄 Cow */
 .cow{position:absolute;bottom:50px;left:-100px;font-size:50px;animation:cowMove 40s linear infinite;}
 @keyframes cowMove{0%{left:-150px;}50%{left:60%;}100%{left:-150px;}}
 
-/* Header & Nav */
-header{position:fixed;top:0;left:0;width:100%;background:linear-gradient(90deg,#ffa751,#ffe259);padding:10px 0;text-align:center;color:white;font-family:'Baloo Da 2',cursive;font-size:30px;text-shadow:1px 2px 3px rgba(0,0,0,0.2);z-index:1000;}
-nav.top{position:fixed;top:64px;left:0;width:100%;background:#fff8d8b8;display:flex;justify-content:center;gap:25px;padding:10px 0;z-index:999;}
-nav.top a{color:#333;text-decoration:none;font-weight:600;font-size:18px;transition:0.3s;}
-nav.top a:hover{color:#e67e22;}
+/* Header & Layout */
+header { position:fixed; top:0; left:0; width:100%; background:linear-gradient(90deg,#fcffd0,#fe003b,#fcffd0); padding:5px 0; text-align:center; color:white; font-family:'Baloo Da 2', cursive; font-size:36px; text-shadow:1px 2px 3px rgba(52, 1, 81, 0.929); z-index:1000; }
+nav.top { position:fixed; top:64px; left:0; width:100%; background:#ffedb318; display:flex; justify-content:center; gap:20px; padding:10px 0; z-index:999; line-height: 20px;}
+nav.top a { color:#002fff; text-decoration:none; font-weight:600; font-weight: bold; font-size:18px; transition:0.3s;}
+nav.top a:hover { background-color:#07de00; padding: 5px; border-radius: 8px; color: #ffffff;}
 
 /* Sidebar */
 aside{position:fixed;top:120px;left:0;width:250px;background:transparent;height:calc(100% - 120px);overflow-y:auto;padding:10px 14px;z-index:900;}
-aside a{display:block;color:#444;background:#fffbe6;padding:10px 14px;margin:8px 0;text-decoration:none;border-radius:10px;font-weight:500;transition:0.3s;}
-aside a:hover{background:linear-gradient(90deg,#fff099,#ffe066);color:#d35400;transform:translateX(5px);}
+aside a{font-size: 20px;display:block;color:#ffff00;background:linear-gradient(90deg,#0082d3,#f72a97);text-shadow: 0 2px 4px #424141;padding:10px 14px;margin:8px 0;text-decoration:none;border-radius:10px;font-weight:800;transition:0.3s;}
+aside a:hover{background:linear-gradient(90deg,#12b500,#edff4f);color:#ffffff;transform:translateX(5px);}
 
 /* Main */
 main{margin-top:120px;margin-left:270px;padding:20px;width:calc(100% - 270px);min-height:100vh;z-index:1;}
 section{padding:15px;background:rgba(255,255,255,0.3);border-radius:14px;box-shadow:0 3px 8px rgba(0,0,0,0.1);margin-bottom:15px;}
-section h2{font-family:'Baloo Da 2',cursive;color:#e67e22;border-bottom:3px solid #ffcc33;display:inline-block;padding-bottom:5px;margin-bottom:10px;}
+section h1 { text-shadow: 0 0 4px #f8ff97;font-family:'Baloo Da 2', cursive; color:#0ba700; border-bottom:3px solid #3355ff; display:inline-block; padding-bottom:5px; margin-bottom:15px; }
+section h2 { text-shadow: 1px 2px 4px #ffffff;font-family:'Baloo Da 2', cursive; color:#022cff; display:inline-block; padding-bottom:5px; margin-bottom:15px; }
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* সবসময় 2 কলাম */
   gap: 12px;
 }
 .card {
-  background:#fffbe6;
+  background:#ffec3d;
   border-radius:10px;
   text-align:center;
   padding:12px;
   font-size:28px;
   font-family:'Baloo Da 2',cursive;
-  color:#e67e22;
+  color:#1b7eff;
   box-shadow:0 2px 6px rgba(0,0,0,0.1);
   transition:0.3s;
   height: 250px;
@@ -88,17 +94,21 @@ section h2{font-family:'Baloo Da 2',cursive;color:#e67e22;border-bottom:3px soli
   align-items: center;     /* horizontally centered */
   line-height: 0px;
 }
-.card:hover{transform:scale(1.08);background:#ffef99;}
-.toggleBtn{padding:10px 16px;margin:5px;font-size:17px;border:none;border-radius:8px;cursor:pointer;background:#ffdd99;transition:0.3s;}
-.toggleBtn.active{background:#ffcc33;color:#fff;}
-footer{text-align:center;padding:15px;font-size:14px;color:#555;margin-top:20px;}
+.card:hover{transform:scale(1.08);background:#00d504;color: #ffffff;}
+.toggleBtn{padding:14px 20px;margin:5px;font-size:17px;border:none;border-radius:10px;cursor:pointer;background:linear-gradient(90deg,#eb87ff,#fc9292);transition:0.3s;color: #ffffff;}
+.toggleBtn.active{background:#00ed10;color:#fff;}
+
 .okkhoro {
   font-size: 140px;
-  line-height: 120px; /* কমিয়ে দিলাম */
-  margin-bottom: 5px; /* নিচের লেখার জন্য স্পেস */
+  line-height: 150px; /* কমিয়ে দিলাম */
+  margin-bottom: 5px;
+   /* নিচের লেখার জন্য স্পেস */
 }
+footer { text-align:center; padding:20px; font-size:14px; color:#555; margin-top:30px; }
+
 /* 🔊 Sound Button */
 #soundBtn{position:fixed;bottom:20px;right:20px;background:#fff3b0;border:2px solid #ffcc33;border-radius:8px;padding:8px 16px;font-size:16px;cursor:pointer;z-index:1100;}
+
 /* 📱 Mobile Responsive Design */
 @media (max-width: 768px) {
 
@@ -181,17 +191,34 @@ footer{text-align:center;padding:15px;font-size:14px;color:#555;margin-top:20px;
 </head>
 <body>
 
-<!-- Animations -->
+<!-- 🌞 Sun -->
 <div class="sun">🌞</div>
-<div class="cloud">☁️</div><div class="cloud">☁️</div><div class="cloud">☁️</div>
-<div class="bird">🐦</div><div class="bird">🐦</div>
+
+<!-- ☁️ Clouds -->
+<div class="cloud">☁️</div>
+<div class="cloud">☁️</div>
+<div class="cloud">☁️</div>
+
+<!-- 🐦 Birds -->
+<div class="bird">🕊️</div>
+<div class="bird">🐦</div>
+<div class="bird">🕊️</div>
+
+<!-- 🌳 Trees, 🌸 Flowers, 🐄 Cow -->
 <div class="ground">
-  <div class="tree">🌳</div><div class="tree">🌳</div><div class="tree">🌳</div><div class="tree">🌳</div>
+  <div class="tree">🌳</div>
+  <div class="tree">🌲</div>
+  <div class="tree">🌳</div>
+  <div class="tree">🌴</div>
   <div class="cow">🐄</div>
-  <div class="flower">🌼</div><div class="flower">🌼</div><div class="flower">🌼</div>
+  <div class="flower">🌼</div>
+  <div class="flower">🌻</div>
+  <div class="flower">🌼</div>
+  <div class="flower">🌻</div>
+  <div class="flower">🌻</div>
 </div>
 
-<header>🌸 শিশু শিক্ষা কেন্দ্র 🌸</header>
+<header>📚 শিশু শিক্ষা কেন্দ্র 📚</header>
 
 <nav class="top">
 <a href="index.html">🏠 হোম</a>
@@ -222,8 +249,8 @@ footer{text-align:center;padding:15px;font-size:14px;color:#555;margin-top:20px;
 
 <main>
 <section>
-  <h2>🌼 বাংলা বর্ণ পরিচয়</h2>
-  <p>ছোট্ট বন্ধুদের শিক্ষার আসর — অক্ষরে অক্ষরে শেখা!</p>
+  <h1>📝 বাংলা বর্ণ পরিচয়</h1>
+  <p style="font-size: 20px; color: #002bec;">ছোট্ট বন্ধুদের শিক্ষার আসর — অক্ষরে অক্ষরে শেখা!</p>
   <div style="text-align:center;margin:10px 0;">
     <button class="toggleBtn active" onclick="showSection('swar')">স্বরবর্ণ</button>
     <button class="toggleBtn" onclick="showSection('benjon')">ব্যঞ্জনবর্ণ</button>
@@ -233,62 +260,62 @@ footer{text-align:center;padding:15px;font-size:14px;color:#555;margin-top:20px;
 <!-- 🌸 স্বরবর্ণ -->
 <section id="swar">
   <div class="grid">
-    <div class="card" onclick="speak('অ')"><div class="okkhoro">অ</div><p>🐍 তে - অজগরটি আসছে তেড়ে।</p></div>
-    <div class="card" onclick="speak('আ')"><div class="okkhoro">আ</div><p>🥭 তে - আমটি আমি খাবো পেরে।</p></div>
-    <div class="card" onclick="speak('ই')"><div class="okkhoro">ই</div><p>🐀 তে - ইঁদুর ভয়ে দৌড়ে পালায়।</p></div>
-    <div class="card" onclick="speak('ঈ')"><div class="okkhoro">ঈ</div><p>🦅 তে - ঈগল আকাশে উড়ে যায়।</p></div>
-    <div class="card" onclick="speak('উ')"><div class="okkhoro">উ</div><p>🐪 তে - উট চলছে আপন মনে।</p></div> 
-    <div class="card" onclick="speak('ঊ')"><div class="okkhoro">ঊ</div><p>🌞 তে - ঊষা ওঠে পূব কোনে। </p></div> 
-    <div class="card" onclick="speak('ঋ')"><div class="okkhoro">ঋ</div><p>👨‍⚕️ তে - ঋষি মশাই বসেন ধ্যানে।</p></div> 
-    <div class="card" onclick="speak('এ')"><div class="okkhoro">এ</div><p>🪕 তে - একতারাটি সুর তোলে।</p></div> 
-    <div class="card" onclick="speak('ঐ')"><div class="okkhoro">ঐ</div><p>🐘 তে - ঐরাবত চলে সুর দুলে।</p></div> 
-    <div class="card" onclick="speak('ও')"><div class="okkhoro">ও</div><p>🌰 তে - ওল খেও না, ধরবে গলা।</p></div> 
-    <div class="card" onclick="speak('ঔ')"><div class="okkhoro">ঔ</div><p>💊 তে - ঔষধ খেতে মিছে বলা।</p></div>
+    <div class="card" onclick="speak('অ')"><div class="okkhoro">অ</div><p> তে - অজগরটি আসছে তেড়ে। 🐍</p></div>
+    <div class="card" onclick="speak('আ')"><div class="okkhoro">আ</div><p> তে - আমটি আমি খাবো পেরে। 🥭</p></div>
+    <div class="card" onclick="speak('ই')"><div class="okkhoro">ই</div><p> তে - ইঁদুর ভয়ে দৌড়ে পালায়। 🐀</p></div>
+    <div class="card" onclick="speak('ঈ')"><div class="okkhoro">ঈ</div><p> তে - ঈগল আকাশে উড়ে যায়। 🦅</p></div>
+    <div class="card" onclick="speak('উ')"><div class="okkhoro">উ</div><p> তে - উট চলছে আপন মনে। 🐪</p></div> 
+    <div class="card" onclick="speak('ঊ')"><div class="okkhoro">ঊ</div><p> তে - ঊষা ওঠে পূব কোনে। 🌞</p></div> 
+    <div class="card" onclick="speak('ঋ')"><div class="okkhoro">ঋ</div><p> তে - ঋষি মশাই বসেন ধ্যানে। 🧘🏻‍♂️</p></div> 
+    <div class="card" onclick="speak('এ')"><div class="okkhoro">এ</div><p> তে - একতারাটি সুর তোলে। 🪕</p></div> 
+    <div class="card" onclick="speak('ঐ')"><div class="okkhoro">ঐ</div><p> তে - ঐরাবত চলে সুর দুলে। 🐘</p></div> 
+    <div class="card" onclick="speak('ও')"><div class="okkhoro">ও</div><p> তে - ওল খেও না, ধরবে গলা। 🌰</p></div> 
+    <div class="card" onclick="speak('ঔ')"><div class="okkhoro">ঔ</div><p> তে - ঔষধ খেতে মিছে বলা। 💊</p></div>
   </div>
 </section>
 
 <!-- 🌸 ব্যঞ্জনবর্ণ -->
 <section id="benjon" style="display:none;">
   <div class="grid">
-    <div class="card" onclick="speak('ক')"><div class="okkhoro">ক</div><p>🦜 তে - কাকাতুয়ার মাথায় ঝুঁটি।</p></div> 
-    <div class="card" onclick="speak('খ')"><div class="okkhoro">খ</div><p>🦊 তে - খেঁকশিয়ালটি পালায় ছুটি।</p></div> 
-    <div class="card" onclick="speak('গ')"><div class="okkhoro">গ</div><p>🐄 তে - গরুর দুধে পুষ্টি ভারি।</p></div> 
-    <div class="card" onclick="speak('ঘ')"><div class="okkhoro">ঘ</div><p>🕰️ তে - ঘড়ি বলে টিক টিক করি।</p></div> 
-    <div class="card" onclick="speak('ঙ')"><div class="okkhoro">ঙ</div><p>⛵ তে - ব্যাঙ মাঝি নৌকা চালায়।</p></div> 
-    <div class="card" onclick="speak('চ')"><div class="okkhoro">চ</div><p>🐦 তে - চড়ুই পাখি গান গায় ।</p></div> 
-    <div class="card" onclick="speak('ছ')"><div class="okkhoro">ছ</div><p>🐐 তে - ছাগলছানা লাফিয়ে চলে।</p></div> 
-    <div class="card" onclick="speak('জ')"><div class="okkhoro">জ</div><p>🚢 তে - জাহাজ ভাসে সাগর জলে।</p></div> 
-    <div class="card" onclick="speak('ঝ')"><div class="okkhoro">ঝ</div><p>🧹 তে - ঝাড়ু হাতে এলো কানাই।</p></div> 
-    <div class="card" onclick="speak('ঞ')"><div class="okkhoro">ঞ</div><p>🐱 তে - মিঞাও বিড়াল লাফিয়ে পালায়।</p></div> 
-    <div class="card" onclick="speak('ট')"><div class="okkhoro">ট</div><p>🐦 তে - টিয়াপাখির ঠোঁটটি লাল।</p></div> 
-    <div class="card" onclick="speak('ঠ')"><div class="okkhoro">ঠ</div><p>👵 তে - ঠাকুরমায়ের শুকনো গাল।</p></div> 
-    <div class="card" onclick="speak('ড')"><div class="okkhoro">ড</div><p>🥥 তে - ডাব খেয়ে করি খেলা।</p></div> 
-    <div class="card" onclick="speak('ঢ')"><div class="okkhoro">ঢ</div><p>🥁 তে - ঢাক বাজে পূজার মেলা।</p></div> 
-    <div class="card" onclick="speak('ণ')"><div class="okkhoro">ণ</div><p>🦌 তে - হরিণ থাকে বনের ধারে।</p></div> 
-    <div class="card" onclick="speak('ত')"><div class="okkhoro">ত</div><p>🍉 তে - তরমুজ খাবো মজা করে।</p></div> 
-    <div class="card" onclick="speak('থ')"><div class="okkhoro">থ</div><p>👜 তে - থলে ভরা টাকা কড়ি।</p></div> 
-    <div class="card" onclick="speak('দ')"><div class="okkhoro">দ</div><p>🖋️ তে - দোয়াত কালি কলমে ভরি।</p></div> 
-    <div class="card" onclick="speak('ধ')"><div class="okkhoro">ধ</div><p>🌾 তে - ধান লাগায় চাষী ভাই। </p></div> 
-    <div class="card" onclick="speak('ন')"><div class="okkhoro">ন</div><p>📘 তে – নোটবুক থাকে সবাই।</p></div> 
-    <div class="card" onclick="speak('প')"><div class="okkhoro">প</div><p>🕊️ তে - পায়রাটি বসে আছে ডালে।</p></div> 
-    <div class="card" onclick="speak('ফ')"><div class="okkhoro">ফ</div><p>🌺 তে - ফুল ফুটেছে খুব সকালে।</p></div> 
-    <div class="card" onclick="speak('ব')"><div class="okkhoro">ব</div><p>🐅 তে - বাঘের গায়ে ডোরা দাগ। </p></div> 
-    <div class="card" onclick="speak('ভ')"><div class="okkhoro">ভ</div><p>🐻 তে - ভাল্লুক নাচে দারুণ রাগ।</p></div> 
-    <div class="card" onclick="speak('ম')"><div class="okkhoro">ম</div><p>🦚 তে - ময়ূর নাচে পেখম মেলে।</p></div> 
-    <div class="card" onclick="speak('য')"><div class="okkhoro">য</div><p>🚗 তে - যাত্রী বোঝাই গাড়ি চলে। </p></div> 
-    <div class="card" onclick="speak('র')"><div class="okkhoro">র</div><p>🐟 তে - রুই মাছ ঝাঁপিয়ে যায়।</p></div> 
-    <div class="card" onclick="speak('ল')"><div class="okkhoro">ল</div><p>🍋 তে - লেবু খেতে মন চায়।</p></div> 
-    <div class="card" onclick="speak('শ')"><div class="okkhoro">শ</div><p>🦊 তে - শিয়াল দৌড়ে পালায় ছুটে।</p></div> 
-    <div class="card" onclick="speak('ষ')"><div class="okkhoro">ষ</div><p>🐂 তে - ষাঁড় ঘুরে মাঠে মাঠে।</p></div> 
-    <div class="card" onclick="speak('স')"><div class="okkhoro">স</div><p>🌊 তে - সাগর জলে ঢেউ ওঠে।</p></div> 
-    <div class="card" onclick="speak('হ')"><div class="okkhoro">হ</div><p>🦆 তে - হাঁস জলে সাঁতার কাটে।</p></div> 
-    <div class="card" onclick="speak('ড়')"><div class="okkhoro">ড়</div><p>🏠 তে - বাড়ি আমার ছোট্ট গ্রামে। </p></div> 
-    <div class="card" onclick="speak('ঢ়')"><div class="okkhoro">ঢ়</div><p>🌦️ তে - আষাঢ় মাসে বৃষ্টি নামে।</p></div> 
-    <div class="card" onclick="speak('য়')"><div class="okkhoro">য়</div><p>🔲 তে - আয়না দেখি মুখ তুলে।  </p></div> 
-    <div class="card" onclick="speak('ৎ')"><div class="okkhoro">ৎ</div><p>🐬 তে - মৎস্য থাকে গভীর জলে।</p></div> 
-    <div class="card" onclick="speak('ং')"><div class="okkhoro">ং</div><p>🦌 তে - হরিণের শিং অনেক ভালো।</p></div> 
-    <div class="card" onclick="speak('ঃ')"><div class="okkhoro">ঃ</div><p>😂 তে - দুঃখ ভুলে খুশিতে চলো।</p></div> 
-    <div class="card" onclick="speak('ঁ')"><div class="okkhoro">ঁ</div><p>🌝 তে - চাঁদের হাঁসিতে উজ্জ্বল আলো।</p></div>
+    <div class="card" onclick="speak('ক')"><div class="okkhoro">ক</div><p>তে - কাকাতুয়ার মাথায় ঝুঁটি। 🦜</p></div> 
+    <div class="card" onclick="speak('খ')"><div class="okkhoro">খ</div><p>তে - খেঁকশিয়ালটি পালায় ছুটি। 🦊</p></div> 
+    <div class="card" onclick="speak('গ')"><div class="okkhoro">গ</div><p>তে - গরুর দুধে পুষ্টি ভারি। 🐄</p></div> 
+    <div class="card" onclick="speak('ঘ')"><div class="okkhoro">ঘ</div><p>তে - ঘড়ি বলে টিক টিক করি। 🕰️</p></div> 
+    <div class="card" onclick="speak('ঙ')"><div class="okkhoro">ঙ</div><p>তে - ব্যাঙ মাঝি নৌকা চালায়। ⛵</p></div> 
+    <div class="card" onclick="speak('চ')"><div class="okkhoro">চ</div><p>তে - চড়ুই পাখি গান গায়। 🐦</p></div> 
+    <div class="card" onclick="speak('ছ')"><div class="okkhoro">ছ</div><p>তে - ছাগলছানা লাফিয়ে চলে। 🐐</p></div> 
+    <div class="card" onclick="speak('জ')"><div class="okkhoro">জ</div><p>তে - জাহাজ ভাসে সাগর জলে। 🚢</p></div> 
+    <div class="card" onclick="speak('ঝ')"><div class="okkhoro">ঝ</div><p>তে - ঝাড়ু হাতে এলো কানাই। 🧹</p></div> 
+    <div class="card" onclick="speak('ঞ')"><div class="okkhoro">ঞ</div><p>তে - মিঞাও বিড়াল লাফিয়ে পালায়। 🐱</p></div> 
+    <div class="card" onclick="speak('ট')"><div class="okkhoro">ট</div><p>তে - টিয়াপাখির ঠোঁটটি লাল। 🐦</p></div> 
+    <div class="card" onclick="speak('ঠ')"><div class="okkhoro">ঠ</div><p>তে - ঠাকুরমায়ের শুকনো গাল। 👵</p></div> 
+    <div class="card" onclick="speak('ড')"><div class="okkhoro">ড</div><p>তে - ডাব খেয়ে করি খেলা। 🥥</p></div> 
+    <div class="card" onclick="speak('ঢ')"><div class="okkhoro">ঢ</div><p>তে - ঢাক বাজে পূজার মেলা। 🥁</p></div> 
+    <div class="card" onclick="speak('ণ')"><div class="okkhoro">ণ</div><p>তে - হরিণ থাকে বনের ধারে। 🦌</p></div> 
+    <div class="card" onclick="speak('ত')"><div class="okkhoro">ত</div><p>তে - তরমুজ খাবো মজা করে। 🍉</p></div> 
+    <div class="card" onclick="speak('থ')"><div class="okkhoro">থ</div><p>তে - থলে ভরা টাকা কড়ি। 👜</p></div> 
+    <div class="card" onclick="speak('দ')"><div class="okkhoro">দ</div><p>তে - দোয়াত কালি কলমে ভরি। 🖋️</p></div> 
+    <div class="card" onclick="speak('ধ')"><div class="okkhoro">ধ</div><p>তে - ধান লাগায় চাষী ভাই। 🌾</p></div> 
+    <div class="card" onclick="speak('ন')"><div class="okkhoro">ন</div><p>তে - নোটবুক থাকে সবাই। 📘</p></div> 
+    <div class="card" onclick="speak('প')"><div class="okkhoro">প</div><p>তে - পায়রাটি বসে আছে ডালে। 🕊️</p></div> 
+    <div class="card" onclick="speak('ফ')"><div class="okkhoro">ফ</div><p>তে - ফুল ফুটেছে খুব সকালে। 🌺</p></div> 
+    <div class="card" onclick="speak('ব')"><div class="okkhoro">ব</div><p>তে - বাঘের গায়ে ডোরা দাগ। 🐅</p></div> 
+    <div class="card" onclick="speak('ভ')"><div class="okkhoro">ভ</div><p>তে - ভাল্লুক নাচে দারুণ রাগ। 🐻</p></div> 
+    <div class="card" onclick="speak('ম')"><div class="okkhoro">ম</div><p>তে - ময়ূর নাচে পেখম মেলে। 🦚</p></div> 
+    <div class="card" onclick="speak('য')"><div class="okkhoro">য</div><p>তে - যাত্রী বোঝাই গাড়ি চলে। 🚗</p></div> 
+    <div class="card" onclick="speak('র')"><div class="okkhoro">র</div><p>তে - রুই মাছ ঝাঁপিয়ে যায়। 🐟</p></div> 
+    <div class="card" onclick="speak('ল')"><div class="okkhoro">ল</div><p>তে - লেবু খেতে মন চায়। 🍋</p></div> 
+    <div class="card" onclick="speak('শ')"><div class="okkhoro">শ</div><p>তে - শিয়াল দৌড়ে পালায় ছুটে। 🦊</p></div> 
+    <div class="card" onclick="speak('ষ')"><div class="okkhoro">ষ</div><p>তে - ষাঁড় ঘুরে মাঠে মাঠে। 🐂</p></div> 
+    <div class="card" onclick="speak('স')"><div class="okkhoro">স</div><p>তে - সাগর জলে ঢেউ ওঠে। 🌊</p></div> 
+    <div class="card" onclick="speak('হ')"><div class="okkhoro">হ</div><p>তে - হাঁস জলে সাঁতার কাটে। 🦆</p></div> 
+    <div class="card" onclick="speak('ড়')"><div class="okkhoro">ড়</div><p>তে - বাড়ি আমার ছোট্ট গ্রামে। 🏠</p></div> 
+    <div class="card" onclick="speak('ঢ়')"><div class="okkhoro">ঢ়</div><p>তে - আষাঢ় মাসে বৃষ্টি নামে। 🌦️</p></div> 
+    <div class="card" onclick="speak('য়')"><div class="okkhoro">য়</div><p>তে - আয়না দেখি মুখ তুলে। 🔲</p></div> 
+    <div class="card" onclick="speak('ৎ')"><div class="okkhoro">ৎ</div><p>তে - মৎস্য থাকে গভীর জলে। 🐬</p></div> 
+    <div class="card" onclick="speak('ং')"><div class="okkhoro">ং</div><p>তে - হরিণের শিং অনেক ভালো। 🦌</p></div> 
+    <div class="card" onclick="speak('ঃ')"><div class="okkhoro">ঃ</div><p>তে - দুঃখ ভুলে খুশিতে চলো। 😂</p></div> 
+    <div class="card" onclick="speak('ঁ')"><div class="okkhoro">ঁ</div><p>তে - চাঁদের হাঁসিতে উজ্জ্বল আলো। 🌝</p></div>
   </div>
 </section>
 

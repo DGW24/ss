@@ -3,24 +3,26 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
-<title>🌸 শিশু শিক্ষা কেন্দ্র 🌸</title>
+<title>📚 শিশু শিক্ষা কেন্দ্র </title>
 <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600&family=Baloo+Da+2:wght@600&display=swap" rel="stylesheet">
 <style>
-*{box-sizing:border-box;scroll-behavior:smooth;}
-body{
-  font-family:'Hind Siliguri',sans-serif;
+* { box-sizing: border-box; scroll-behavior: smooth; }
+
+body {
+  font-family: 'Hind Siliguri', sans-serif;
   margin:0;
   display:flex;
-  background:linear-gradient(to top,#b3ffb3 0%,#ccf2ff 60%,#ffffff 100%);
+  background: linear-gradient(to top, #b3ffb3 0%, #ccf2ff 60%, #ffffff 100%);
   overflow-x:hidden;
   position:relative;
 }
+
 /* 🌞 Sun */
-.sun{position:fixed;top:40px;right:80px;font-size:60px;animation:rotateSun 30s linear infinite;z-index:0;}
+.sun{position:fixed;top:60px;right:80px;font-size:80px;animation:rotateSun 30s linear infinite;z-index:0;}
 @keyframes rotateSun{from{transform:rotate(0deg);}to{transform:rotate(360deg);}}
 
 /* ☁️ Clouds */
-.cloud{position:fixed;font-size:50px;top:100px;left:-200px;opacity:0.7;animation:moveCloud 60s linear infinite;}
+.cloud{position:fixed;font-size:70px;top:100px;left:-200px;opacity:0.7;animation:moveCloud 60s linear infinite;}
 .cloud:nth-child(1){animation-delay:0s;}
 .cloud:nth-child(2){top:150px;animation-delay:20s;}
 .cloud:nth-child(3){top:200px;animation-delay:40s;}
@@ -30,54 +32,58 @@ body{
 .bird{position:fixed;font-size:30px;animation:flyBird 20s linear infinite;}
 .bird:nth-child(4){top:180px;left:-80px;animation-delay:0s;}
 .bird:nth-child(5){top:220px;left:-200px;animation-delay:10s;}
+.bird:nth-child(6){top:250px;right:-400px;animation-delay:20s;}
 @keyframes flyBird{0%{left:-100px;}50%{top:220px;}100%{left:110%;}}
 
 /* 🌳 Trees & Flowers */
 .ground{position:fixed;bottom:0;left:0;width:100%;height:200px;z-index:0;overflow:hidden;}
-.tree{position:absolute;bottom:40px;font-size:50px;animation:swayTree 4s ease-in-out infinite alternate;}
+.tree{position:absolute;bottom:40px;font-size:80px;animation:swayTree 4s ease-in-out infinite alternate;}
 .tree:nth-child(1){right:50px;}
-.tree:nth-child(2){right:150px;}
-.tree:nth-child(3){right:300px;}
+.tree:nth-child(2){right:180px;}
+.tree:nth-child(3){left:300px;}
 .tree:nth-child(4){right:450px;}
 @keyframes swayTree{from{transform:rotate(-2deg);}to{transform:rotate(2deg);}}
 .flower{position:absolute;bottom:20px;font-size:30px;animation:bloom 3s ease-in-out infinite alternate;}
 .flower:nth-child(5){left:100px;}
-.flower:nth-child(6){left:180px;}
-.flower:nth-child(7){left:260px;}
+.flower:nth-child(6){left:260px;}
+.flower:nth-child(7){left:580px;}
+.flower:nth-child(8){right:150px;}
+.flower:nth-child(9){right:260px;}
 @keyframes bloom{from{transform:scale(0.8);}to{transform:scale(1.2);}}
 
 /* 🐄 Cow */
 .cow{position:absolute;bottom:50px;left:-100px;font-size:50px;animation:cowMove 40s linear infinite;}
 @keyframes cowMove{0%{left:-150px;}50%{left:60%;}100%{left:-150px;}}
 
-/* Header & Nav */
-header{position:fixed;top:0;left:0;width:100%;background:linear-gradient(90deg,#ffa751,#ffe259);padding:10px 0;text-align:center;color:white;font-family:'Baloo Da 2',cursive;font-size:30px;text-shadow:1px 2px 3px rgba(0,0,0,0.2);z-index:1000;}
-nav.top{position:fixed;top:64px;left:0;width:100%;background:#fff8d8b8;display:flex;justify-content:center;gap:25px;padding:10px 0;z-index:999;}
-nav.top a{color:#333;text-decoration:none;font-weight:600;font-size:18px;transition:0.3s;}
-nav.top a:hover{color:#e67e22;}
+/* Header & Layout */
+header { position:fixed; top:0; left:0; width:100%; background:linear-gradient(90deg,#fcffd0,#fe003b,#fcffd0); padding:5px 0; text-align:center; color:white; font-family:'Baloo Da 2', cursive; font-size:36px; text-shadow:1px 2px 3px rgba(52, 1, 81, 0.929); z-index:1000; }
+nav.top { position:fixed; top:64px; left:0; width:100%; background:#ffedb318; display:flex; justify-content:center; gap:20px; padding:10px 0; z-index:999; line-height: 20px;}
+nav.top a { color:#002fff; text-decoration:none; font-weight:600; font-weight: bold; font-size:18px; transition:0.3s;}
+nav.top a:hover { background-color:#07de00; padding: 5px; border-radius: 8px; color: #ffffff;}
 
 /* Sidebar */
 aside{position:fixed;top:120px;left:0;width:250px;background:transparent;height:calc(100% - 120px);overflow-y:auto;padding:10px 14px;z-index:900;}
-aside a{display:block;color:#444;background:#fffbe6;padding:10px 14px;margin:8px 0;text-decoration:none;border-radius:10px;font-weight:500;transition:0.3s;}
-aside a:hover{background:linear-gradient(90deg,#fff099,#ffe066);color:#d35400;transform:translateX(5px);}
+aside a{font-size: 20px;display:block;color:#ffff00;background:linear-gradient(90deg,#0082d3,#f72a97);text-shadow: 0 2px 4px #424141;padding:10px 14px;margin:8px 0;text-decoration:none;border-radius:10px;font-weight:800;transition:0.3s;}
+aside a:hover{background:linear-gradient(90deg,#12b500,#edff4f);color:#ffffff;transform:translateX(5px);}
 
 /* Main */
 main{margin-top:120px;margin-left:270px;padding:20px;width:calc(100% - 270px);min-height:100vh;z-index:1;}
 section{padding:15px;background:rgba(255,255,255,0.3);border-radius:14px;box-shadow:0 3px 8px rgba(0,0,0,0.1);margin-bottom:15px;}
-section h2{font-family:'Baloo Da 2',cursive;color:#e67e22;border-bottom:3px solid #ffcc33;display:inline-block;padding-bottom:5px;margin-bottom:10px;}
+section h1 { text-shadow: 0 0 4px #f8ff97;font-family:'Baloo Da 2', cursive; color:#0ba700; border-bottom:3px solid #3355ff; display:inline-block; padding-bottom:5px; margin-bottom:15px; }
+section h2 { text-shadow: 1px 2px 4px #ffffff;font-family:'Baloo Da 2', cursive; color:#022cff; display:inline-block; padding-bottom:5px; margin-bottom:15px; }
 .grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr); /* সবসময় 2 কলাম */
   gap: 12px;
 }
 .card {
-  background:#fffbe6;
+  background:#ffec3d;
   border-radius:10px;
   text-align:center;
   padding:12px;
   font-size:28px;
   font-family:'Baloo Da 2',cursive;
-  color:#e67e22;
+  color:#016ffe;
   box-shadow:0 2px 6px rgba(0,0,0,0.1);
   transition:0.3s;
   height: 250px;
@@ -88,17 +94,23 @@ section h2{font-family:'Baloo Da 2',cursive;color:#e67e22;border-bottom:3px soli
   align-items: center;     /* horizontally centered */
   line-height: 0px;
 }
-.card:hover{transform:scale(1.08);background:#ffef99;}
-.toggleBtn{padding:10px 16px;margin:5px;font-size:17px;border:none;border-radius:8px;cursor:pointer;background:#ffdd99;transition:0.3s;}
-.toggleBtn.active{background:#ffcc33;color:#fff;}
-footer{text-align:center;padding:15px;font-size:14px;color:#555;margin-top:20px;}
+.card:hover{transform:scale(1.08);background:#00b903;color: #ffffff;}
+.toggleBtn{padding:14px 20px;margin:5px;font-size:17px;border:none;border-radius:10px;cursor:pointer;background:linear-gradient(90deg,#eb87ff,#fc9292);transition:0.3s;color: #ffffff;}
+.toggleBtn.active{background:#00ed10;color:#fff;}
+
 .okkhoro {
   font-size: 140px;
-  line-height: 120px; /* কমিয়ে দিলাম */
-  margin-bottom: 5px; /* নিচের লেখার জন্য স্পেস */
+  line-height: 150px; /* কমিয়ে দিলাম */
+  margin-bottom: 5px;
+  
+  
 }
+
+footer { text-align:center; padding:20px; font-size:14px; color:#555; margin-top:30px; }
+
 /* 🔊 Sound Button */
 #soundBtn{position:fixed;bottom:20px;right:20px;background:#fff3b0;border:2px solid #ffcc33;border-radius:8px;padding:8px 16px;font-size:16px;cursor:pointer;z-index:1100;}
+
 /* 📱 Mobile Responsive Design */
 @media (max-width: 768px) {
 
@@ -181,17 +193,34 @@ footer{text-align:center;padding:15px;font-size:14px;color:#555;margin-top:20px;
 </head>
 <body>
 
-<!-- Animations -->
+<!-- 🌞 Sun -->
 <div class="sun">🌞</div>
-<div class="cloud">☁️</div><div class="cloud">☁️</div><div class="cloud">☁️</div>
-<div class="bird">🐦</div><div class="bird">🐦</div>
+
+<!-- ☁️ Clouds -->
+<div class="cloud">☁️</div>
+<div class="cloud">☁️</div>
+<div class="cloud">☁️</div>
+
+<!-- 🐦 Birds -->
+<div class="bird">🕊️</div>
+<div class="bird">🐦</div>
+<div class="bird">🕊️</div>
+
+<!-- 🌳 Trees, 🌸 Flowers, 🐄 Cow -->
 <div class="ground">
-  <div class="tree">🌳</div><div class="tree">🌳</div><div class="tree">🌳</div><div class="tree">🌳</div>
+  <div class="tree">🌳</div>
+  <div class="tree">🌲</div>
+  <div class="tree">🌳</div>
+  <div class="tree">🌴</div>
   <div class="cow">🐄</div>
-  <div class="flower">🌼</div><div class="flower">🌼</div><div class="flower">🌼</div>
+  <div class="flower">🌼</div>
+  <div class="flower">🌻</div>
+  <div class="flower">🌼</div>
+  <div class="flower">🌻</div>
+  <div class="flower">🌻</div>
 </div>
 
-<header>🌸 শিশু শিক্ষা কেন্দ্র 🌸</header>
+<header>📚 শিশু শিক্ষা কেন্দ্র 📚</header>
 
 <nav class="top">
 <a href="index.html">🏠 হোম</a>
@@ -210,7 +239,11 @@ footer{text-align:center;padding:15px;font-size:14px;color:#555;margin-top:20px;
 <a href="frut.html">ফলের পরিচয়</a>
 <a href="animl.html">পশুর পরিচয়</a>
 <a href="brd.html">পাখির পরিচয়</a>
+<a href="food.html">খাদ্যের পরিচয়</a>
+<a href="vegetable.html">শাঁক-সবজি পরিচয়</a>
+<a href="vehicle.html">যানবাহন পরিচয়</a>
 <a href="usetng.html">ব্যবহারিক জিনিস</a>
+<a href="bodypts.html">মানব অঙ্গ পরিচয়</a>
 <a href="clor.html">রঙ চেনা</a>
 <a href="relig.html">শাস্ত্র কথা</a>
 <a href="quiz.html">নিজে উত্তর দাও</a>
@@ -218,36 +251,36 @@ footer{text-align:center;padding:15px;font-size:14px;color:#555;margin-top:20px;
 
 <main>
 <section>
-  <h2>🌼 ইংরেজি বর্ণমালা</h2>
-  <p>ছোট্ট বন্ধুদের শিক্ষার আসর — ইংরেজি বর্ণমালা শেখা!</p>
+  <h1>📝 ইংরেজি বর্ণমালা</h1>
+  <p style="font-size: 20px; color: #002bec;">ছোট্ট বন্ধুদের শিক্ষার আসর — ইংরেজি বর্ণমালা শেখা!</p>
   
   <div class="grid">
-    <div class="card" onclick="speak('A')"><div class="okkhoro">A</div><p>🍎 তে - Apple</p><p style="font-size: small;">Apple মানে - আপেল</p></div>
-    <div class="card" onclick="speak('B')"><div class="okkhoro">B</div><p>⚽ তে - Ball</p><p style="font-size: small;">Ball মানে - বল</p></div>
-    <div class="card" onclick="speak('C')"><div class="okkhoro">C</div><p>🐈 তে - Cat</p><p style="font-size: small;">Cat মানে - বিড়াল</p></div>
-    <div class="card" onclick="speak('D')"><div class="okkhoro">D</div><p>🐶 তে - Dog</p><p style="font-size: small;">Dog মানে - কুকুর</p></div>
-    <div class="card" onclick="speak('E')"><div class="okkhoro">E</div><p>🥚 তে - Egg</p><p style="font-size: small;">Egg মানে - ডিম</p></div>
-    <div class="card" onclick="speak('F')"><div class="okkhoro">F</div><p>🐟 তে - Fish</p><p style="font-size: small;">Fish মানে - মাছ</p></div>
-    <div class="card" onclick="speak('G')"><div class="okkhoro">G</div><p>🦒 তে - Giraffe</p><p style="font-size: small;">Giraffe মানে - জিরাফ</p></div>
-    <div class="card" onclick="speak('H')"><div class="okkhoro">H</div><p>🏠 তে - House</p><p style="font-size: small;">House মানে - ঘর</p></div>
-    <div class="card" onclick="speak('I')"><div class="okkhoro">I</div><p>🍦 তে - Ice-cream</p><p style="font-size: small;">Ice-cream মানে - আইসক্রিম</p></div>
-    <div class="card" onclick="speak('J')"><div class="okkhoro">J</div><p>🤹 তে - Joker</p><p style="font-size: small;">Joker মানে - ভাঁড়</p></div>
-    <div class="card" onclick="speak('K')"><div class="okkhoro">K</div><p>🦘 তে - Kangaroo</p><p style="font-size: small;">Kangaroo মানে - ক্যাঙ্গারু</p></div>
-    <div class="card" onclick="speak('L')"><div class="okkhoro">L</div><p>🦁 তে - Lion</p><p style="font-size: small;">Lion মানে - সিংহ</p></div>
-    <div class="card" onclick="speak('M')"><div class="okkhoro">M</div><p>🐒 তে - Monkey</p><p style="font-size: small;">Monkey মানে - বানর</p></div>
-    <div class="card" onclick="speak('N')"><div class="okkhoro">N</div><p>🐦 তে - Nest</p><p style="font-size: small;">Nest মানে - পাখির বাসা</p></div>
-    <div class="card" onclick="speak('O')"><div class="okkhoro">O</div><p>🐙 তে - Octopus</p><p style="font-size: small;">Octopus মানে - অক্টোপাস</p></div>
-    <div class="card" onclick="speak('P')"><div class="okkhoro">P</div><p>🦜 তে - Parrot</p><p style="font-size: small;">Parrot মানে - টিয়া পাখি</p></div>
-    <div class="card" onclick="speak('Q')"><div class="okkhoro">Q</div><p>👸 তে - Queen</p><p style="font-size: small;">Queen মানে - রাণী</p></div>
-    <div class="card" onclick="speak('R')"><div class="okkhoro">R</div><p>🐇 তে - Rabbit</p><p style="font-size: small;">Rabbit মানে - খরগোশ</p></div>
-    <div class="card" onclick="speak('S')"><div class="okkhoro">S</div><p>🐍 তে - Snake</p><p style="font-size: small;">Snake মানে - সাপ</p></div>
-    <div class="card" onclick="speak('T')"><div class="okkhoro">T</div><p>🐅 তে - Tiger</p><p style="font-size: small;">Tiger মানে - বাঘ</p></div>
-    <div class="card" onclick="speak('U')"><div class="okkhoro">U</div><p>☂️ তে - Umbrella</p><p style="font-size: small;">Umbrella মানে - ছাতা</p></div>
-    <div class="card" onclick="speak('V')"><div class="okkhoro">V</div><p>🎻 তে - Violin</p><p style="font-size: small;">Violin মানে - বেহালা</p></div>
-    <div class="card" onclick="speak('W')"><div class="okkhoro">W</div><p>🐺 তে - Wolf</p><p style="font-size: small;">Wolf মানে - নেকড়ে</p></div>
-    <div class="card" onclick="speak('X')"><div class="okkhoro">X</div><p>🎶 তে - Xylophone</p><p style="font-size: small;">Xylophone মানে - বাদ্যযন্ত্র</p></div>
-    <div class="card" onclick="speak('Y')"><div class="okkhoro">Y</div><p>🛥️ তে - Yacht</p><p style="font-size: small;">Yacht মানে - নৌকা</p></div>
-    <div class="card" onclick="speak('Z')"><div class="okkhoro">Z</div><p>🦓 তে - Zebra</p><p style="font-size: small;">Zebra মানে - জেব্রা</p></div>
+    <div class="card" onclick="speak('')"><div class="okkhoro">A</div><p>তে - Apple 🍎</p><p style="font-size: small;">Apple মানে - আপেল</p></div>
+    <div class="card" onclick="speak('')"><div class="okkhoro">B</div><p>তে - Ball ⚽</p><p style="font-size: small;">Ball মানে - বল</p></div>
+    <div class="card" onclick="speak('')"><div class="okkhoro">C</div><p>তে - Cat 🐈</p><p style="font-size: small;">Cat মানে - বিড়াল</p></div>
+    <div class="card" onclick="speak('')"><div class="okkhoro">D</div><p>তে - Dog 🐶</p><p style="font-size: small;">Dog মানে - কুকুর</p></div>
+    <div class="card" onclick="speak('')"><div class="okkhoro">E</div><p>তে - Egg 🥚</p><p style="font-size: small;">Egg মানে - ডিম</p></div>
+    <div class="card" onclick="speak('')"><div class="okkhoro">F</div><p>তে - Fish 🐟</p><p style="font-size: small;">Fish মানে - মাছ</p></div>
+    <div class="card" onclick="speak('')"><div class="okkhoro">G</div><p>তে - Grapes 🍇</p><p style="font-size: small;">Grapes মানে - আঙুর</p></div>
+    <div class="card" onclick="speak('')"><div class="okkhoro">H</div><p>তে - House 🏠</p><p style="font-size: small;">House মানে - ঘর</p></div>
+    <div class="card" onclick="speak('')"><div class="okkhoro">I</div><p>তে - Ice-cream 🍦</p><p style="font-size: small;">Ice-cream মানে - আইসক্রিম</p></div>
+    <div class="card" onclick="speak('')"><div class="okkhoro">J</div><p>তে - Jackfruit 🥭</p><p style="font-size: small;">Jackfruit মানে - কাঁঠাল</p></div>
+    <div class="card" onclick="speak('')"><div class="okkhoro">K</div><p>তে - Kite 🪁</p><p style="font-size: small;">Kite মানে - ঘুড়ি</p></div>
+    <div class="card" onclick="speak('')"><div class="okkhoro">L</div><p>তে - Lion 🦁</p><p style="font-size: small;">Lion মানে - সিংহ</p></div>
+    <div class="card" onclick="speak('')"><div class="okkhoro">M</div><p>তে - Mango 🥭</p><p style="font-size: small;">Mango মানে - আম</p></div>
+    <div class="card" onclick="speak('')"><div class="okkhoro">N</div><p>তে - Nest 🐦</p><p style="font-size: small;">Nest মানে - পাখির বাসা</p></div>
+    <div class="card" onclick="speak('')"><div class="okkhoro">O</div><p>তে - Owl 🦉</p><p style="font-size: small;">Owl মানে - পেঁচা</p></div>
+    <div class="card" onclick="speak('')"><div class="okkhoro">P</div><p>তে - Parrot 🦜</p><p style="font-size: small;">Parrot মানে - টিয়া পাখি</p></div>
+    <div class="card" onclick="speak('')"><div class="okkhoro">Q</div><p>তে - Queen 👸</p><p style="font-size: small;">Queen মানে - রাণী</p></div>
+    <div class="card" onclick="speak('')"><div class="okkhoro">R</div><p>তে - Rabbit 🐇</p><p style="font-size: small;">Rabbit মানে - খরগোশ</p></div>
+    <div class="card" onclick="speak('')"><div class="okkhoro">S</div><p>তে - Snake 🐍</p><p style="font-size: small;">Snake মানে - সাপ</p></div>
+    <div class="card" onclick="speak('')"><div class="okkhoro">T</div><p>তে - Tiger 🐅</p><p style="font-size: small;">Tiger মানে - বাঘ</p></div>
+    <div class="card" onclick="speak('')"><div class="okkhoro">U</div><p>তে - Umbrella ☂️</p><p style="font-size: small;">Umbrella মানে - ছাতা</p></div>
+    <div class="card" onclick="speak('')"><div class="okkhoro">V</div><p>তে - Violin 🎻</p><p style="font-size: small;">Violin মানে - বেহালা</p></div>
+    <div class="card" onclick="speak('')"><div class="okkhoro">W</div><p>তে - Wolf 🐺</p><p style="font-size: small;">Wolf মানে - নেকড়ে</p></div>
+    <div class="card" onclick="speak('')"><div class="okkhoro">X</div><p>তে - Xylophone 🎶</p><p style="font-size: small;">Xylophone মানে - বাদ্যযন্ত্র</p></div>
+    <div class="card" onclick="speak('')"><div class="okkhoro">Y</div><p>তে - Yacht 🛥️</p><p style="font-size: small;">Yacht মানে - নৌকা</p></div>
+    <div class="card" onclick="speak('')"><div class="okkhoro">Z</div><p>তে - Zebra 🦓</p><p style="font-size: small;">Zebra মানে - জেব্রা</p></div>
 
   </div>
 </section>
